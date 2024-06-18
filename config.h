@@ -1,5 +1,6 @@
 /* See LICENSE file for copyright and license details. */
 
+#include "layouts.c"
 #include "movestack.c"
 /* appearance */
 static const unsigned int borderpx  = 3;        /* border pixel of windows */
@@ -15,13 +16,16 @@ static const char col_gray3[]       = "#bbbbbb";
 static const char col_gray4[]       = "#eeeeee";
 
 /*static const char col_cyan[]        = "#005577";*/
-/*static const char col_cyan[]        = "#2A2B2B";*/
+
+static const char col_red[]        = "#cc241d";
 
 static const char col_cyan[]        = "#222222";
 static const char *colors[][3]      = {
 	/*               fg         bg         border   */
 	[SchemeNorm] = { col_gray3, col_gray1, col_gray2 },
-	[SchemeSel]  = { col_gray4, col_cyan,  col_cyan  },
+	[SchemeSel]  = { col_gray4, col_cyan,  col_red  },
+
+	/*[SchemeSel]  = { col_gray4, col_cyan,  col_cyan  },*/
 };
 
 /* tagging */
@@ -47,6 +51,7 @@ static const Layout layouts[] = {
 	/* symbol     arrange function */
 	{ "[]=",      tile },    /* first entry is default */
   { "III",      horizontal },
+  { "HHH",      grid },
 	{ "[M]",      monocle },
   { "><>",      NULL },    /* no layout function means floating behavior */
 	{ NULL,       NULL },
@@ -103,7 +108,8 @@ static const Key keys[] = {
 
 	{ MODKEY|ShiftMask,             XK_j,      movestack,      {.i = +1 } },
 	{ MODKEY|ShiftMask,             XK_k,      movestack,      {.i = -1 } },
-
+/*gridmode*/
+/*	{ MODKEY,                       XK_g,      setlayout,      {.v = &layouts[3]} },*/
 	{ MODKEY,                       XK_0,      view,           {.ui = ~0 } },
 	{ MODKEY|ShiftMask,             XK_0,      tag,            {.ui = ~0 } },
 	{ MODKEY,                       XK_comma,  focusmon,       {.i = -1 } },
