@@ -149,6 +149,7 @@ static int applysizehints(Client *c, int *x, int *y, int *w, int *h, int interac
 static void arrange(Monitor *m);
 static void arrangemon(Monitor *m);
 static void attach(Client *c);
+static void attachbottom(Client *c);
 static void attachstack(Client *c);
 static void buttonpress(XEvent *e);
 static void checkotherwm(void);
@@ -178,6 +179,7 @@ static long getstate(Window w);
 static int gettextprop(Window w, Atom atom, char *text, unsigned int size);
 static void grabbuttons(Client *c, int focused);
 static void grabkeys(void);
+static void horizontal(Monitor *m);
 static void incnmaster(const Arg *arg);
 static void keypress(XEvent *e);
 static void killclient(const Arg *arg);
@@ -416,6 +418,15 @@ attach(Client *c)
 {
 	c->next = c->mon->clients;
 	c->mon->clients = c;
+}
+
+void
+attachbottom(Client *c)
+{
+	Client **tc;
+	c->next = NULL;
+	for (tc = &c->mon->clients; *tc; tc = &(*tc)->next);
+	*tc = c;
 }
 
 void
@@ -1006,6 +1017,22 @@ grabkeys(void)
 }
 
 void
+horizontal(Monitor *m)
+{
+	Client *c;
+	unsigned int n, i;
+
+	/* Count windows */
+	for(n = 0, c = nexttiled(m->clients); c; c = nexttiled(c->next), n++);
+
+	if(!n)
+		return;
+	else /* Split vertically */
+		for(i = 0, c = nexttiled(m->clients); c; c = nexttiled(c->next), i++)
+			resize(c, m->wx + i * m->mw / n, m->wy, m->mw / n - (2 * c->bw), m->wh - (2 * c->bw), False);
+}
+
+void
 incnmaster(const Arg *arg)
 {
 	selmon->nmaster = MAX(selmon->nmaster + arg->i, 0);
@@ -1104,7 +1131,7 @@ manage(Window w, XWindowAttributes *wa)
 		c->isfloating = c->oldstate = trans != None || c->isfixed;
 	if (c->isfloating)
 		XRaiseWindow(dpy, c->win);
-	attach(c);
+	attachbottom(c);
 	attachstack(c);
 	XChangeProperty(dpy, root, netatom[NetClientList], XA_WINDOW, 32, PropModeAppend,
 		(unsigned char *) &(c->win), 1);
@@ -1243,7 +1270,7 @@ void
 pop(Client *c)
 {
 	detach(c);
-	attach(c);
+  attachbottom(c);
 	focus(c);
 	arrange(c->mon);
 }
@@ -1534,7 +1561,7 @@ sendmon(Client *c, Monitor *m)
 	detachstack(c);
 	c->mon = m;
 	c->tags = m->tagset[m->seltags]; /* assign tags of target monitor */
-	attach(c);
+	attachbottom(c);
 	attachstack(c);
 	focus(NULL);
 	arrange(NULL);
