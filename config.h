@@ -50,6 +50,8 @@ static const int lockfullscreen = 1; /* 1 will force focus on the fullscreen win
 static const Layout layouts[] = {
 	/* symbol     arrange function */
 	{ "[]=",      tile },    /* first entry is default */
+  { "|M|",      centeredmaster },
+  { ">M>",      centeredfloatingmaster },
   { "III",      horizontal },
   { "HHH",      grid },
 	{ "[M]",      monocle },
@@ -100,6 +102,9 @@ static const Key keys[] = {
 /*brightness*/
   { MODKEY,                       XK_w,      spawn,          {.v = brightness_up } },
   { MODKEY,                       XK_s,      spawn,          {.v = brightness_down } },
+/*centered mastor layot*/
+  { MODKEY,                       XK_u,      setlayout,      {.v = &layouts[3]} },
+  { MODKEY,                       XK_o,      setlayout,      {.v = &layouts[4]} },
 
 	{ MODKEY,                       XK_space,  setlayout,      {0} },
 	{ MODKEY|ShiftMask,             XK_space,  togglefloating, {0} },
