@@ -41,6 +41,13 @@ static const Rule rules[] = {
 	{ "Firefox",  NULL,       NULL,       1 << 8,       0,           -1 },
 };
 
+
+// volume control center
+#include <X11/XF86keysym.h>
+static const char *upvol[]      = { "/usr/bin/wpctl",   "set-volume", "@DEFAULT_AUDIO_SINK@",      "5%+",      NULL };
+static const char *downvol[]    = { "/usr/bin/wpctl",   "set-volume", "@DEFAULT_AUDIO_SINK@",      "5%-",      NULL };
+static const char *mutevol[]    = { "/usr/bin/wpctl",   "set-mute",   "@DEFAULT_AUDIO_SINK@",      "toggle",   NULL };
+
 /* layout(s) */
 static const float mfact     = 0.55; /* factor of master area size [0.05..0.95] */
 static const int nmaster     = 1;    /* number of clients in master area */
@@ -80,6 +87,11 @@ static const char *brightness_down[] = { "brightnessctl", "set", "5%-", NULL };
 
 static const Key keys[] = {
 	/* modifier                     key        function        argument */
+  // audio keys
+  { MODKEY,                       XK_F3, spawn, {.v = upvol   } },
+  { MODKEY,                       XK_F2, spawn, {.v = downvol } },
+  { MODKEY,                       XK_F4,  spawn, {.v = mutevol } },
+
 	{ MODKEY,                       XK_d,      spawn,          {.v = dmenucmd } },
 	{ MODKEY,                       XK_Return, spawn,          {.v = termcmd } },
 	{ MODKEY,                       XK_b,      togglebar,      {0} },
