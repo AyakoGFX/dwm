@@ -13,3 +13,7 @@ xset r rate 250 60 &
 xrandr --output eDP --mode 1920x1080 --rate 144.00 &
 
 /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
+
+if [ -f ~/.Xmodmap ]; then
+    xmodmap ~/.Xmodmap
+fi
