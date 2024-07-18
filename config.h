@@ -36,8 +36,9 @@ static const Rule rules[] = {
 	 *	WM_CLASS(STRING) = instance, class
 	 *	WM_NAME(STRING) = title
 	 */
+// xprop to find class
 	/* class      instance    title       tags mask     isfloating   monitor */
-	{ "Gimp",     NULL,       NULL,       0,            1,           -1 },
+	{ "Gimp",     NULL,       NULL,       0,            0,           -1 },
 	{ "Firefox",  NULL,       NULL,       1 << 8,       0,           -1 },
 };
 
@@ -80,7 +81,10 @@ static const Layout layouts[] = {
 /* commands */
 static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() */
 /*static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb", col_gray1, "-nf", col_gray3, "-sb", col_cyan, "-sf", col_gray4, NULL };*/
-static const char *Dmenu[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb", col_gray1, "-nf", col_gray3, "-sb", col_cyan, "-sf", col_gray4, NULL };
+// static const char *Dmenu[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb", col_gray1, "-nf", col_gray3, "-sb", col_cyan, "-sf", col_gray4, NULL };
+// static const char *DmenuRun[] = { "dmenu_run", NULL };
+static const char *DmenuRun[] = { "/usr/bin/dmenu_run", NULL };
+//
 static const char *dmenucmd[] = { "rofi", "-show", "drun", NULL };
 static const char *termcmd[]  = { "alacritty", NULL };
 static const char *brightness_up[] = { "brightnessctl", "set", "5%+", NULL };
@@ -92,9 +96,8 @@ static const Key keys[] = {
   { MODKEY,                       XK_F3, spawn, {.v = upvol   } },
   { MODKEY,                       XK_F2, spawn, {.v = downvol } },
   { MODKEY,                       XK_F4,  spawn, {.v = mutevol } },
-
+  { MODKEY,                       XK_g,      spawn,          {.v = DmenuRun } },
 	{ MODKEY,                       XK_d,      spawn,          {.v = dmenucmd } },
-	{ MODKEY,                       XK_x,      spawn,          {.v = Dmenu } },
 	{ MODKEY,                       XK_Return, spawn,          {.v = termcmd } },
 	{ MODKEY,                       XK_b,      togglebar,      {0} },
 	{ MODKEY,                       XK_j,      focusstack,     {.i = +1 } },
@@ -121,7 +124,7 @@ static const Key keys[] = {
   { MODKEY,                       XK_o,      setlayout,      {.v = &layouts[4]} },
 
 	{ MODKEY,                       XK_space,  setlayout,      {0} },
-	{ MODKEY|ShiftMask,             XK_space,  togglefloating, {0} },
+  { MODKEY|ShiftMask,             XK_f,      togglefloating, {0} },
   { MODKEY,                       XK_f,      togglefullscr,  {0} },
 	/*{ MODKEY|ShiftMask,             XK_f,      togglefullscr,  {0} },*/
 
