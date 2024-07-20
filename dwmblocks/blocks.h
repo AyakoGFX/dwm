@@ -8,7 +8,7 @@ static const Block blocks[] = {
   {"Up:", "uptime | grep -ohe 'up .*' | awk '{gsub(/[,;]/, \"\", $2); print $2}'", 60, 0}, // Uptime block
   //
   {"R:", "free -h | awk '/^Mem/ { print $3\"/\"$2 }' | sed s/i//g",	30,		0},
-  {"B:", "acpi | awk '{ print $4 }' | tr -d ','", 60, 0},
+  {"B:", "acpi | awk '{ print $5 }' | tr -d ','", 60, 0},
 
   {"D:",   "df -h / | awk 'NR==2 {print $3, $4}'", 60, 0}, // Used space on /
 };

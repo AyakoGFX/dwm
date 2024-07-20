@@ -49,6 +49,10 @@ static const char *upvol[]      = { "/usr/bin/wpctl",   "set-volume", "@DEFAULT_
 static const char *downvol[]    = { "/usr/bin/wpctl",   "set-volume", "@DEFAULT_AUDIO_SINK@",      "10%-",      NULL };
 static const char *mutevol[]    = { "/usr/bin/wpctl",   "set-mute",   "@DEFAULT_AUDIO_SINK@",      "toggle",   NULL };
 
+/* If you use pulsaudio add somewhere in your constants definition section instead. */
+// static const char *upvol[]      = { "/usr/bin/pactl",   "set-sink-volume", "0",      "+10%",      NULL };
+// static const char *downvol[]    = { "/usr/bin/pactl",   "set-sink-volume", "0",      "-10%",      NULL };
+// static const char *mutevol[]    = { "/usr/bin/pactl",   "set-sink-mute",   "0",      "toggle",   NULL };
 /* layout(s) */
 static const float mfact     = 0.55; /* factor of master area size [0.05..0.95] */
 static const int nmaster     = 1;    /* number of clients in master area */
