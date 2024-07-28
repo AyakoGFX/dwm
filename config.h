@@ -151,6 +151,9 @@ static const Key keys[] = {
 	{ MODKEY|ShiftMask,             XK_e,      quit,           {0} },
   { MODKEY|ControlMask|ShiftMask, XK_q,      quit,           {1} }, 
 
+  { MODKEY,                       XK_n, scratchpad_show, {0} },
+  { MODKEY|ShiftMask,             XK_n, scratchpad_hide, {0} },
+  { MODKEY,                       XK_m,scratchpad_remove,{0} },
 };
 
 /* button definitions */
