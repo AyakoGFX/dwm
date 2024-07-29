@@ -83,6 +83,8 @@ static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() 
 // static const char *DmenuRun[] = { "dmenu_run", NULL };
 static const char *DmenuRun[] = { "/usr/bin/dmenu_run", NULL };
 //
+//sudo sudo pacman -S flameshot
+static const char *flameshot[] = { "flameshot", "gui", NULL };
 static const char *dmenucmd[] = { "rofi", "-show", "drun", NULL };
 static const char *termcmd[]  = { "alacritty", NULL };
 static const char *brightness_up[] = { "brightnessctl", "set", "5%+", NULL };
@@ -95,6 +97,7 @@ static const Key keys[] = {
   { MODKEY,                       XK_F2, spawn, {.v = downvol } },
   { MODKEY,                       XK_F4,  spawn, {.v = mutevol } },
   { MODKEY,                       XK_g,      spawn,          {.v = DmenuRun } },
+  { MODKEY,                       XK_o,      spawn,          {.v = flameshot } },
 	{ MODKEY,                       XK_d,      spawn,          {.v = dmenucmd } },
 	{ MODKEY,                       XK_Return, spawn,          {.v = termcmd } },
 	{ MODKEY,                       XK_b,      togglebar,      {0} },
@@ -118,8 +121,8 @@ static const Key keys[] = {
   { MODKEY,                       XK_w,      spawn,          {.v = brightness_up } },
   { MODKEY,                       XK_s,      spawn,          {.v = brightness_down } },
 /*centered mastor layot*/
-  { MODKEY,                       XK_u,      setlayout,      {.v = &layouts[3]} },
-  { MODKEY,                       XK_o,      setlayout,      {.v = &layouts[4]} },
+  // { MODKEY,                       XK_u,      setlayout,      {.v = &layouts[3]} },
+  // { MODKEY,                       XK_o,      setlayout,      {.v = &layouts[4]} },
 
 	{ MODKEY,                       XK_space,  setlayout,      {0} },
   { MODKEY|ShiftMask,             XK_f,      togglefloating, {0} },
