@@ -93,9 +93,10 @@ static const char *brightness_down[] = { "brightnessctl", "set", "5%-", NULL };
 static const Key keys[] = {
 	/* modifier                     key        function        argument */
   // audio keys
-  { MODKEY,                       XK_F3, spawn, {.v = upvol   } },
-  { MODKEY,                       XK_F2, spawn, {.v = downvol } },
-  { MODKEY,                       XK_F4,  spawn, {.v = mutevol } },
+  { MODKEY| ShiftMask,            XK_w, spawn, {.v = upvol   } },
+  { MODKEY| ShiftMask,            XK_s, spawn, {.v = downvol } },
+  { MODKEY,                       XK_F1,  spawn, {.v = mutevol } },
+
   { MODKEY,                       XK_g,      spawn,          {.v = DmenuRun } },
   { MODKEY,                       XK_o,      spawn,          {.v = flameshot } },
 	{ MODKEY,                       XK_d,      spawn,          {.v = dmenucmd } },
@@ -110,9 +111,6 @@ static const Key keys[] = {
 	{ MODKEY|ShiftMask,             XK_f,      zoom,           {0} },
 	{ MODKEY,                       XK_Tab,    view,           {0} },
 	{ MODKEY,                       XK_q,      killclient,     {0} },
-	/*{ MODKEY,                       XK_t,      setlayout,      {.v = &layouts[0]} },*/
-	/*{ MODKEY,                       XK_e,      setlayout,      {.v = &layouts[1]} },*/
-	/*{ MODKEY,                       XK_m,      setlayout,      {.v = &layouts[2]} },*/
 
 	{ MODKEY|ControlMask,	        	XK_comma,  cyclelayout,    {.i = -1 } },
 	{ MODKEY|ControlMask,           XK_period, cyclelayout,    {.i = +1 } },
@@ -120,19 +118,13 @@ static const Key keys[] = {
 /*brightness*/
   { MODKEY,                       XK_w,      spawn,          {.v = brightness_up } },
   { MODKEY,                       XK_s,      spawn,          {.v = brightness_down } },
-/*centered mastor layot*/
-  // { MODKEY,                       XK_u,      setlayout,      {.v = &layouts[3]} },
-  // { MODKEY,                       XK_o,      setlayout,      {.v = &layouts[4]} },
 
 	{ MODKEY,                       XK_space,  setlayout,      {0} },
   { MODKEY|ShiftMask,             XK_f,      togglefloating, {0} },
   { MODKEY,                       XK_f,      togglefullscr,  {0} },
-	/*{ MODKEY|ShiftMask,             XK_f,      togglefullscr,  {0} },*/
-
 	{ MODKEY|ShiftMask,             XK_j,      movestack,      {.i = +1 } },
 	{ MODKEY|ShiftMask,             XK_k,      movestack,      {.i = -1 } },
 /*gridmode*/
-/*	{ MODKEY,                       XK_g,      setlayout,      {.v = &layouts[3]} },*/
 	{ MODKEY,                       XK_0,      view,           {.ui = ~0 } },
 	{ MODKEY|ShiftMask,             XK_0,      tag,            {.ui = ~0 } },
 	{ MODKEY,                       XK_comma,  focusmon,       {.i = -1 } },
