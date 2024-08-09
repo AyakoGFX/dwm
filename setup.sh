@@ -1,7 +1,7 @@
 #!/bin/bash
 
 sudo pacman -S --needed --noconfirm base-devel extra/git extra/libx11 extra/libxcb extra/libxinerama extra/libxft extra/imlib2
-sudo pacman -S --noconfirm picom flameshot rofi dmenu acpi nitrogen polkit-gnome 
+sudo pacman -S --noconfirm picom flameshot rofi dmenu acpi nitrogen polkit-gnome google-chrome pcmanfm xfce4-taskmanager btop
 
 cp -r .dwm ~/
 
