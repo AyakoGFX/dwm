@@ -15,7 +15,8 @@ cd dwmblocks
 sudo make clean install
 cd ..
 
-sudo make clean install && rm *.o && rm *.orig
+sudo make clean install 
+#&& rm *.o && rm *.orig
 
 
 
