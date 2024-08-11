@@ -8,8 +8,8 @@ static const Block blocks[] = {
   {"Up:", "uptime | grep -ohe 'up .*' | awk '{gsub(/[,;]/, \"\", $2); print $2}'", 60, 0}, // Uptime block
   {"R:", "free -h | awk '/^Mem/ { print $3\"/\"$2 }' | sed s/i//g",	3,		0},
   {"B:", "acpi | awk '{ print $5 }' | tr -d ','", 60, 0},
-  {"D:",   "df -h / | awk 'NR==2 {print $3, $4}'", 60, 0}, // Used space on /
-  {"V:", "pactl list sinks | awk '/Volume:/ {print $5}' | head -n 1 | tr -d '%')%",1 ,0},
+  {"D:", "df -h / | awk 'NR==2 {print $3, $4}'", 60, 0}, // Used space on /
+  {"V:", "pactl list sinks | awk '/Volume:/ {print $5}' | head -n 1 | tr -d '%'", 1, 0},
 };
 
 //sets delimiter between status commands. NULL character ('\0') means no delimiter.
