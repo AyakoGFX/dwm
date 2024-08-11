@@ -6,7 +6,8 @@ nitrogen --restore &
 # Start Picom for compositing
 picom &
 
-emacs --daemon &
+# emacs --daemon &
+clipmenud &
 
 # Set keyboard repeat rate
 xset r rate 250 60 &

@@ -79,16 +79,28 @@ static const char *brightness_down[] = { "brightnessctl", "set", "5%-", NULL };
 
 static const Key keys[] = {
     /* modifier                     key        function        argument */
-    /* Audio keys */
+    /* Audio control */
     { MODKEY|ShiftMask,             XK_w,      spawn,          {.v = upvol   } },
     { MODKEY|ShiftMask,             XK_s,      spawn,          {.v = downvol } },
     { MODKEY,                       XK_F1,     spawn,          {.v = mutevol } },
 
+  /* Brightness control */
+    { MODKEY,                       XK_w,      spawn,          {.v = brightness_up } },
+    { MODKEY,                       XK_s,      spawn,          {.v = brightness_down } },
+
     /* Application launchers */
+    { MODKEY,                       XK_d,      spawn,          {.v = dmenucmd } },
     { MODKEY,                       XK_g,      spawn,          {.v = DmenuRun } },
     { MODKEY,                       XK_o,      spawn,          {.v = flameshot } },
-    { MODKEY,                       XK_d,      spawn,          {.v = dmenucmd } },
     { MODKEY,                       XK_Return, spawn,          {.v = termcmd } },
+
+    /* rofi scripts */
+    { 0,                             XK_F1,      spawn,          SHCMD("rofi -modi emoji -show emoji") },
+    { 0,                             XK_F2,      spawn,          SHCMD("clipmenu") },
+    { 0,                             XK_F3,      spawn,          SHCMD("rofi-wifi") },
+    { 0,                             XK_F4,      spawn,          SHCMD("rofi-bluetooth") },
+    { 0,                             XK_F5,      spawn,          SHCMD("rofi-passmenu") },
+    { 0,                             XK_F6,      spawn,          SHCMD("rofi -show power-menu -modi power-menu:rofi-power-menu") },
 
     /* Window management */
     { MODKEY,                       XK_b,      togglebar,      {0} },
@@ -109,9 +121,6 @@ static const Key keys[] = {
     { MODKEY|ShiftMask,             XK_j,      movestack,      {.i = +1 } },
     { MODKEY|ShiftMask,             XK_k,      movestack,      {.i = -1 } },
 
-    /* Brightness control */
-    { MODKEY,                       XK_w,      spawn,          {.v = brightness_up } },
-    { MODKEY,                       XK_s,      spawn,          {.v = brightness_down } },
 
     /* Tag management */
     { MODKEY,                       XK_0,      view,           {.ui = ~0 } },
@@ -137,7 +146,7 @@ static const Key keys[] = {
     TAGKEYS(                        XK_8,                      7)
     TAGKEYS(                        XK_9,                      8)
 
-    /* Quit and restart */
+    /* Quit and restart Dwm */
     { MODKEY|ShiftMask,             XK_e,      quit,           {0} },
     { MODKEY|ControlMask|ShiftMask, XK_q,      quit,           {1} }, 
 

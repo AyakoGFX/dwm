@@ -89,10 +89,18 @@ static const Key keys[] = {
     { MODKEY,                       XK_s,      spawn,          {.v = brightness_down } },
 
     /* Application launchers */
+    { MODKEY,                       XK_d,      spawn,          {.v = dmenucmd } },
     { MODKEY,                       XK_g,      spawn,          {.v = DmenuRun } },
     { MODKEY,                       XK_o,      spawn,          {.v = flameshot } },
-    { MODKEY,                       XK_d,      spawn,          {.v = dmenucmd } },
     { MODKEY,                       XK_Return, spawn,          {.v = termcmd } },
+
+    /* rofi scripts */
+    { 0,                             XK_F1,      spawn,          SHCMD("rofi -modi emoji -show emoji") },
+    { 0,                             XK_F2,      spawn,          SHCMD("clipmenu") },
+    { 0,                             XK_F3,      spawn,          SHCMD("rofi-wifi") },
+    { 0,                             XK_F4,      spawn,          SHCMD("rofi-bluetooth") },
+    { 0,                             XK_F5,      spawn,          SHCMD("rofi-passmenu") },
+    { 0,                             XK_F6,      spawn,          SHCMD("rofi -show power-menu -modi power-menu:rofi-power-menu") },
 
     /* Window management */
     { MODKEY,                       XK_b,      togglebar,      {0} },
