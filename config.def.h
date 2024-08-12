@@ -4,8 +4,6 @@
 #include "layouts.c"
 #include "movestack.c"
 
-#define SESSION_FILE "/tmp/dwm-session"
-
 /* Appearance */
 static const unsigned int borderpx  = 2;        /* Border pixel of windows */
 static const unsigned int gappx     = 6;        /* Gaps between windows */
