@@ -112,6 +112,10 @@ static const Key keys[] = {
     { MODKEY,                       XK_Tab,    view,           {0} },
     { MODKEY,                       XK_q,      killclient,     {0} },
 
+
+    /* Lock Screen */
+    { MODKEY|ShiftMask,             XK_l,      spawn,          SHCMD("slock") },
+
     /* Layout manipulation */
     { MODKEY|ControlMask,           XK_comma,  cyclelayout,    {.i = -1 } },
     { MODKEY|ControlMask,           XK_period, cyclelayout,    {.i = +1 } },
