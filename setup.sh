@@ -1,7 +1,13 @@
 #!/bin/bash
 
 sudo pacman -S --needed --noconfirm base-devel extra/git extra/libx11 extra/libxcb extra/libxinerama extra/libxft extra/imlib2
-sudo pacman -S  --needed --noconfirm picom flameshot rofi acpi nitrogen polkit-gnome google-chrome pcmanfm xfce4-taskmanager btop brightnessctl xclip slock 
+sudo pacman -S  --needed --noconfirm picom dmenu flameshot rofi acpi nitrogen polkit-gnome google-chrome pcmanfm xfce4-taskmanager btop brightnessctl xclip slock  trash-cli
+
+#font
+sudo pacman -S  --needed --noconfirm ttf-firacode-nerd ttf-jetbrains-mono-nerd noto-fonts emoji-font ttf-font ttf-ms-fonts ttf-liberation terminus-font
+
+# yay -S ttf-defenestration
+# yay -S ttf-ms-win11-auto
 
 # installing yay
 # removed dep
