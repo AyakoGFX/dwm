@@ -10,7 +10,7 @@ static const unsigned int gappx     = 6;        /* Gaps between windows */
 static const unsigned int snap      = 32;       /* Snap pixel */
 static const int showbar            = 1;        /* 0 means no bar */
 static const int topbar             = 0;        /* 0 means bottom bar */
-static const char *fonts[]          = { "monospace:size=10" };
+static const char *fonts[] = { "monospace:size=10", "FiraCode Nerd Font:size=10" };
 static const char dmenufont[]       = "monospace:size=10";
 
 /* Colors */
