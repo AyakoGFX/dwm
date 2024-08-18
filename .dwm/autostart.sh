@@ -17,6 +17,10 @@ xrandr --output eDP --mode 1920x1080 --rate 144.00 &
 
 dwmblocks &
 
+nm-applet &
+
+blueman-applet &
+
 /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
 
 setxkbmap -option caps:swapescape &
