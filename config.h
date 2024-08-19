@@ -10,7 +10,8 @@ static const unsigned int gappx     = 6;        /* Gaps between windows */
 static const unsigned int snap      = 32;       /* Snap pixel */
 static const int showbar            = 1;        /* 0 means no bar */
 static const int topbar             = 0;        /* 0 means bottom bar */
-static const char *fonts[] = { "monospace:size=10", "FiraCode Nerd Font:size=10" };
+static const char *fonts[]     = { "monospace:size=11:antialias=true:hinting=true",
+                                   "FiraCode Nerd Font:size=11:antialias=true:autohint=true" };
 static const char dmenufont[]       = "monospace:size=10";
 
 /* systray */
@@ -66,11 +67,11 @@ static const Layout layouts[] = {
 
 /* Key definitions */
 #define MODKEY Mod4Mask
-#define TAGKEYS(KEY,TAG) \
-    { MODKEY,                       KEY,      view,           {.ui = 1 << TAG} }, \
-    { MODKEY|ControlMask,           KEY,      toggleview,     {.ui = 1 << TAG} }, \
-    { MODKEY|ShiftMask,             KEY,      tag,            {.ui = 1 << TAG} }, \
-    { MODKEY|ControlMask|ShiftMask, KEY,      toggletag,      {.ui = 1 << TAG} },
+#define TAGKEYS(KEY,TAG)                                                                                               \
+       &((Keychord){1, {{MODKEY, KEY}},                                        view,           {.ui = 1 << TAG} }), \
+       &((Keychord){1, {{MODKEY|ControlMask, KEY}},                            toggleview,     {.ui = 1 << TAG} }), \
+       &((Keychord){1, {{MODKEY|ShiftMask, KEY}},                              tag,            {.ui = 1 << TAG} }), \
+       &((Keychord){1, {{MODKEY|ControlMask|ShiftMask, KEY}},                  toggletag,      {.ui = 1 << TAG} }),
 
 /* Helper for spawning shell commands in the pre dwm-5.0 fashion */
 #define SHCMD(cmd) { .v = (const char*[]){ "/bin/sh", "-c", cmd, NULL } }
@@ -84,67 +85,65 @@ static const char *termcmd[]  = { "alacritty", NULL };
 static const char *brightness_up[] = { "brightnessctl", "set", "5%+", NULL };
 static const char *brightness_down[] = { "brightnessctl", "set", "5%-", NULL };
 
-static const Key keys[] = {
-    /* modifier                     key        function        argument */
-    /* Audio control */
-    { MODKEY|ShiftMask,             XK_w,      spawn,          {.v = upvol   } },
-    { MODKEY|ShiftMask,             XK_s,      spawn,          {.v = downvol } },
-    { MODKEY,                       XK_F1,     spawn,          {.v = mutevol } },
+static Keychord *keychords[] = {
 
-  /* Brightness control */
-    { MODKEY,                       XK_w,      spawn,          {.v = brightness_up } },
-    { MODKEY,                       XK_s,      spawn,          {.v = brightness_down } },
+    /* Brightness control */
+    &((Keychord){1, {{MODKEY, XK_w}},                spawn,          {.v = brightness_up } }),
+    &((Keychord){1, {{MODKEY, XK_s}},                spawn,          {.v = brightness_down } }),
+
+    /* Audio control */
+    &((Keychord){1, {{MODKEY|ShiftMask, XK_w}},      spawn,          {.v = upvol   } }),
+    &((Keychord){1, {{MODKEY|ShiftMask, XK_s}},      spawn,          {.v = downvol } }),
+    &((Keychord){1, {{MODKEY, XK_F1}},               spawn,          {.v = mutevol } }),
 
     /* Application launchers */
-    { MODKEY,                       XK_d,      spawn,          {.v = dmenucmd } },
-    { MODKEY,                       XK_g,      spawn,          {.v = DmenuRun } },
-    { MODKEY,                       XK_o,      spawn,          {.v = flameshot } },
-    { MODKEY,                       XK_Return, spawn,          {.v = termcmd } },
-
+    &((Keychord){1, {{MODKEY, XK_d}},                spawn,          {.v = dmenucmd } }),
+    &((Keychord){1, {{MODKEY, XK_g}},                spawn,          {.v = DmenuRun } }),
+    &((Keychord){1, {{MODKEY, XK_o}},                spawn,          {.v = flameshot } }),
+    &((Keychord){1, {{MODKEY, XK_Return}},           spawn,          {.v = termcmd } }),
+    
     /* rofi scripts */
-    { 0,                             XK_F1,      spawn,          SHCMD("rofi -modi emoji -show emoji") },
-    { 0,                             XK_F2,      spawn,          SHCMD("clipmenu") },
-    { 0,                             XK_F3,      spawn,          SHCMD("rofi-wifi") },
-    { 0,                             XK_F4,      spawn,          SHCMD("rofi-bluetooth") },
-    { 0,                             XK_F5,      spawn,          SHCMD("rofi-passmenu") },
-    { 0,                             XK_F6,      spawn,          SHCMD("rofi -show power-menu -modi power-menu:rofi-power-menu") },
+    &((Keychord){2, {{MODKEY, XK_r}, {0, XK_e}},     spawn,          SHCMD("rofi -modi emoji -show emoji") }),
+    &((Keychord){2, {{MODKEY, XK_r}, {0, XK_c}},     spawn,          SHCMD("clipmenu") }),
+    &((Keychord){2, {{MODKEY, XK_r}, {0, XK_w}},     spawn,          SHCMD("rofi-wifi") }),
+    &((Keychord){2, {{MODKEY, XK_r}, {0, XK_b}},     spawn,          SHCMD("rofi-bluetooth") }),
+    &((Keychord){2, {{MODKEY, XK_r}, {0, XK_p}},     spawn,          SHCMD("rofi-passmenu") }),
+    &((Keychord){2, {{MODKEY, XK_r}, {0, XK_o}},     spawn,          SHCMD("rofi -show power-menu -modi power-menu:rofi-power-menu") }),
 
     /* Window management */
-    { MODKEY,                       XK_b,      togglebar,      {0} },
-    { MODKEY,                       XK_j,      focusstack,     {.i = +1 } },
-    { MODKEY,                       XK_k,      focusstack,     {.i = -1 } },
-    { MODKEY,                       XK_h,      setmfact,       {.f = -0.05} },
-    { MODKEY,                       XK_l,      setmfact,       {.f = +0.05} },
-    { MODKEY|ShiftMask,             XK_f,      zoom,           {0} },
-    { MODKEY,                       XK_Tab,    view,           {0} },
-    { MODKEY,                       XK_q,      killclient,     {0} },
-
+    &((Keychord){1, {{MODKEY, XK_b}},                togglebar,      {0} }),
+    &((Keychord){1, {{MODKEY, XK_j}},                focusstack,     {.i = +1 } }),
+    &((Keychord){1, {{MODKEY, XK_k}},                focusstack,     {.i = -1 } }),
+    &((Keychord){1, {{MODKEY, XK_h}},                setmfact,       {.f = -0.05} }),
+    &((Keychord){1, {{MODKEY, XK_l}},                setmfact,       {.f = +0.05} }),
+    &((Keychord){1, {{MODKEY|ShiftMask, XK_f}},      zoom,           {0} }),
+    &((Keychord){1, {{MODKEY, XK_Tab}},              view,           {0} }),
+    &((Keychord){1, {{MODKEY, XK_q}},                killclient,     {0} }),
 
     /* Lock Screen */
-    { MODKEY|ShiftMask,             XK_l,      spawn,          SHCMD("slock") },
+    &((Keychord){2, {{MODKEY, XK_x}, {0, XK_l}},      spawn,          SHCMD("slock") }),
 
     /* Layout manipulation */
-    { MODKEY|ControlMask,           XK_comma,  cyclelayout,    {.i = -1 } },
-    { MODKEY|ControlMask,           XK_period, cyclelayout,    {.i = +1 } },
-    { MODKEY,                       XK_space,  setlayout,      {0} },
-    { MODKEY|ShiftMask,             XK_f,      togglefloating, {0} },
-    { MODKEY,                       XK_f,      togglefullscr,  {0} },
-    { MODKEY|ShiftMask,             XK_j,      movestack,      {.i = +1 } },
-    { MODKEY|ShiftMask,             XK_k,      movestack,      {.i = -1 } },
-
+    &((Keychord){1, {{MODKEY|Mod1Mask, XK_comma}},  cyclelayout,    {.i = -1 } }),
+    &((Keychord){1, {{MODKEY|Mod1Mask, XK_period}}, cyclelayout,    {.i = +1 } }),
+    &((Keychord){1, {{MODKEY, XK_space}},              setlayout,      {0} }),
+    &((Keychord){1, {{MODKEY|ShiftMask, XK_f}},        togglefloating, {0} }),
+    &((Keychord){1, {{MODKEY, XK_f}},                  togglefullscr,  {0} }),
+    &((Keychord){1, {{MODKEY|ShiftMask, XK_j}},        movestack,      {.i = +1 } }),
+    &((Keychord){1, {{MODKEY|ShiftMask, XK_k}},        movestack,      {.i = -1 } }),
 
     /* Tag management */
-    { MODKEY,                       XK_0,      view,           {.ui = ~0 } },
-    { MODKEY|ShiftMask,             XK_0,      tag,            {.ui = ~0 } },
-    { MODKEY,                       XK_comma,  focusmon,       {.i = -1 } },
-    { MODKEY,                       XK_period, focusmon,       {.i = +1 } },
-    { MODKEY|ShiftMask,             XK_comma,  tagmon,         {.i = -1 } },
-    { MODKEY|ShiftMask,             XK_period, tagmon,         {.i = +1 } },
+    &((Keychord){1, {{MODKEY, XK_0}},                view,           {.ui = ~0 } }),
+    &((Keychord){1, {{MODKEY|ShiftMask, XK_0}},      tag,            {.ui = ~0 } }),
+    &((Keychord){1, {{MODKEY, XK_comma}},            focusmon,       {.i = -1 } }),
+    &((Keychord){1, {{MODKEY, XK_period}},           focusmon,       {.i = +1 } }),
+    &((Keychord){1, {{MODKEY|ShiftMask, XK_comma}},  tagmon,         {.i = -1 } }),
+    &((Keychord){1, {{MODKEY|ShiftMask, XK_period}}, tagmon,         {.i = +1 } }),
 
     /* Gaps */
-    { MODKEY,                       XK_minus,  setgaps,        {.i = -1 } },
-    { MODKEY,                       XK_equal,  setgaps,        {.i = +1 } },
-    { MODKEY|ShiftMask,             XK_equal,  setgaps,        {.i = 0  } },
+    &((Keychord){1, {{MODKEY, XK_minus}},            setgaps,        {.i = -1 } }),
+    &((Keychord){1, {{MODKEY, XK_equal}},            setgaps,        {.i = +1 } }),
+    &((Keychord){1, {{MODKEY|ShiftMask, XK_equal}},  setgaps,        {.i = 0  } }),
 
     /* Tag keys */
     TAGKEYS(                        XK_1,                      0)
@@ -158,13 +157,13 @@ static const Key keys[] = {
     TAGKEYS(                        XK_9,                      8)
 
     /* Quit and restart Dwm */
-    { MODKEY|ShiftMask,             XK_e,      quit,           {0} },
-    { MODKEY|ControlMask|ShiftMask, XK_q,      quit,           {1} }, 
+    &((Keychord){1, {{MODKEY|ShiftMask, XK_e}},             quit,           {0} }),
+    &((Keychord){1, {{MODKEY|ControlMask|ShiftMask, XK_q}}, quit,           {1} }), 
 
     /* Scratchpad */
-    { MODKEY,                       XK_n,      scratchpad_show,   {0} },
-    { MODKEY|ShiftMask,             XK_n,      scratchpad_hide,   {0} },
-    { MODKEY,                       XK_m,      scratchpad_remove, {0} },
+    &((Keychord){1, {{MODKEY, XK_n}},                       scratchpad_show,   {0} }),
+    &((Keychord){1, {{MODKEY|ShiftMask, XK_n}},             scratchpad_hide,   {0} }),
+    &((Keychord){1, {{MODKEY, XK_m}},                       scratchpad_remove, {0} }),
 };
 
 /* Button definitions */

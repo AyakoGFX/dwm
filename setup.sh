@@ -40,6 +40,7 @@ install_packages \
     xclip \
     slock \
     trash-cli \
+    sxiv \
     network-manager-applet
 
 # Install fonts
@@ -64,6 +65,9 @@ install_packages \
 # sudo apt install build-essential git libx11-dev libx11-xcb-dev libxcb-res0-dev libxinerama-dev libxft-dev libimlib2-dev
 # below pkg not tested
 #sudo pacman -S --noconfirm picom flameshot rofi dmenu acpi nitrogen polkit-gnome google-chrome pcmanfm xfce4-taskmanager btop brightnessctl
+
+mkdir -p ~/Pictures/SS/
+
 
 # Copy .dwm directory to home
 echo "Copying .dwm directory to home..."
