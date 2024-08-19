@@ -84,6 +84,16 @@ static const char *termcmd[]  = { "alacritty", NULL };
 static const char *brightness_up[] = { "brightnessctl", "set", "5%+", NULL };
 static const char *brightness_down[] = { "brightnessctl", "set", "5%-", NULL };
 
+/*application open*/
+static const char *browser[]  = { "thorium-browser", NULL };
+static const char *filemanager[]  = { "pcmanfm", NULL };
+static const char *videoeditor[]  = { "org.kde.kdenlive", NULL };
+static const char *photoditor[]  = { "gimp", NULL };
+static const char *githubdesk[]  = { "github-desktop", NULL };
+static const char *recording[]  = { "obs", NULL };
+
+
+
 static Keychord *keychords[] = {
 
     /* Brightness control */
@@ -99,6 +109,19 @@ static Keychord *keychords[] = {
     &((Keychord){1, {{MODKEY, XK_d}},                spawn,          {.v = dmenucmd } }),
     &((Keychord){1, {{MODKEY, XK_g}},                spawn,          {.v = DmenuRun } }),
     &((Keychord){1, {{MODKEY, XK_Return}},           spawn,          {.v = termcmd } }),
+
+    /*application open*/
+    &((Keychord){2, {{MODKEY, XK_o}, {0, XK_b}},                spawn,          {.v = browser } }),
+    &((Keychord){2, {{MODKEY, XK_o}, {0, XK_f}},                spawn,          {.v = filemanager } }),
+    &((Keychord){2, {{MODKEY, XK_o}, {0, XK_v}},                spawn,          {.v = videoeditor } }),
+    &((Keychord){2, {{MODKEY, XK_o}, {0, XK_p}},                spawn,          {.v = photoditor } }),
+    &((Keychord){2, {{MODKEY, XK_o}, {0, XK_d}},                spawn,          {.v = githubdesk } }),
+    &((Keychord){2, {{MODKEY, XK_o}, {0, XK_r}},                spawn,          {.v = recording } }),
+
+    /*terminal app*/
+    &((Keychord){3, {{MODKEY, XK_o}, {0, XK_t}, {0, XK_n}},     spawn,          SHCMD("alacritty -e nvim") }),
+    &((Keychord){3, {{MODKEY, XK_o}, {0, XK_t}, {0, XK_b}},     spawn,          SHCMD("alacritty -e btop") }),
+
 
     /* screanshot with flameshot */
     &((Keychord){3, {{MODKEY, XK_x}, {0, XK_s}, {0, XK_s}},     spawn,          SHCMD("flameshot gui") }),
