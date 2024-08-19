@@ -125,6 +125,7 @@ static Keychord *keychords[] = {
     /*terminal app*/
     &((Keychord){3, {{MODKEY, XK_o}, {0, XK_t}, {0, XK_n}},     spawn,          SHCMD("alacritty -e nvim") }),
     &((Keychord){3, {{MODKEY, XK_o}, {0, XK_t}, {0, XK_b}},     spawn,          SHCMD("alacritty -e btop") }),
+    &((Keychord){3, {{MODKEY, XK_o}, {0, XK_t}, {0, XK_s}},     spawn,          SHCMD("alacritty -e speedtest") }),
 
 
     /* screanshot with flameshot */
