@@ -20,7 +20,10 @@ install_packages \
     extra/libxcb \
     extra/libxinerama \
     extra/libxft \
-    extra/imlib2
+    extra/imlib2 \
+    extra/xcb-util\
+    extra/libxcb
+
 
 # Install desktop environment and utility applications
 echo "Installing desktop environment and utility applications..."
