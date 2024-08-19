@@ -79,7 +79,6 @@ static const Layout layouts[] = {
 /* Commands */
 static char dmenumon[2] = "0"; /* Component of dmenucmd, manipulated in spawn() */
 static const char *DmenuRun[] = { "/usr/bin/dmenu_run", NULL };
-static const char *flameshot[] = { "flameshot", "gui", NULL };
 static const char *dmenucmd[] = { "rofi", "-show", "drun", NULL };
 static const char *termcmd[]  = { "alacritty", NULL };
 static const char *brightness_up[] = { "brightnessctl", "set", "5%+", NULL };
@@ -99,8 +98,14 @@ static Keychord *keychords[] = {
     /* Application launchers */
     &((Keychord){1, {{MODKEY, XK_d}},                spawn,          {.v = dmenucmd } }),
     &((Keychord){1, {{MODKEY, XK_g}},                spawn,          {.v = DmenuRun } }),
-    &((Keychord){1, {{MODKEY, XK_o}},                spawn,          {.v = flameshot } }),
     &((Keychord){1, {{MODKEY, XK_Return}},           spawn,          {.v = termcmd } }),
+
+    /* screanshot with flameshot */
+    &((Keychord){3, {{MODKEY, XK_x}, {0, XK_s}, {0, XK_s}},     spawn,          SHCMD("flameshot gui") }),
+    &((Keychord){3, {{MODKEY, XK_x}, {0, XK_s}, {0, XK_f}},     spawn,          SHCMD("flameshot full --path ~/Pictures/SS/") }),
+    &((Keychord){3, {{MODKEY, XK_x}, {0, XK_s}, {0, XK_d}},     spawn,          SHCMD("flameshot full --delay 5000") }),
+    &((Keychord){3, {{MODKEY, XK_x}, {0, XK_s}, {0, XK_c}},     spawn,          SHCMD("flameshot full --clipboard") }),
+
     
     /* rofi scripts */
     &((Keychord){2, {{MODKEY, XK_r}, {0, XK_e}},     spawn,          SHCMD("rofi -modi emoji -show emoji") }),
