@@ -33,6 +33,7 @@ install_packages \
     flameshot \
     rofi \
     acpi \
+    cbatticon \
     nitrogen \
     polkit-gnome \
     google-chrome \
@@ -45,6 +46,8 @@ install_packages \
     trash-cli \
     sxiv \
     network-manager-applet
+    # pasystray  use yay -S volapplet-git
+
 
 # Install fonts
 echo "Installing fonts..."
@@ -60,6 +63,8 @@ install_packages \
 
 # yay -S ttf-defenestration
 # yay -S ttf-ms-win11-auto
+
+# applet yay -S volapplet-git
 
 # installing yay
 # removed dep
@@ -82,12 +87,14 @@ cd rofi-scripts
 chmod +x *
 sudo cp * /usr/bin/
 cd ..
+clear
 
 # Install dmenu-distrotube
 echo "Installing dmenu-distrotube..."
 cd dmenu-distrotube
 sudo make clean install
 cd ..
+clear
 
 # Set up clipmenu
 echo "Setting up clipmenu..."
@@ -95,23 +102,26 @@ cd clipmenu/
 sudo cp clipmenud.service /etc/systemd/system/
 sudo make clean install 
 cd ..
+clear
 
 # Set up dwm sessions
 echo "Setting up dwm sessions..."
 cd dwm-sessionsx
 sudo cp dwm.desktop /usr/share/xsessions/
 cd ..
+clear
 
 # Install dwmblocks
 echo "Installing dwmblocks..."
 cd dwmblocks
 sudo make clean install
 cd ..
+clear
 
 # Final installation step
 echo "Performing final installation..."
 sudo make clean install 
-
+clear
 # Uncomment the following line to remove object files and backups
 # rm *.o *.orig
 

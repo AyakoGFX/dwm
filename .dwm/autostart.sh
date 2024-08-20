@@ -21,6 +21,10 @@ nm-applet &
 
 blueman-applet &
 
+volapplet &
+
+cbatticon &
+
 /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
 
 setxkbmap -option caps:swapescape &
