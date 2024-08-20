@@ -125,8 +125,6 @@ static Keychord *keychords[] = {
     /*terminal app*/
     &((Keychord){3, {{MODKEY, XK_o}, {0, XK_t}, {0, XK_n}},     spawn,          SHCMD("alacritty -e nvim") }),
     &((Keychord){3, {{MODKEY, XK_o}, {0, XK_t}, {0, XK_b}},     spawn,          SHCMD("alacritty -e btop") }),
-    &((Keychord){3, {{MODKEY, XK_o}, {0, XK_t}, {0, XK_s}},     spawn,          SHCMD("alacritty -e speedtest") }),
-
 
     /* screanshot with flameshot */
     &((Keychord){3, {{MODKEY, XK_x}, {0, XK_s}, {0, XK_s}},     spawn,          SHCMD("flameshot gui") }),
@@ -134,6 +132,8 @@ static Keychord *keychords[] = {
     &((Keychord){3, {{MODKEY, XK_x}, {0, XK_s}, {0, XK_d}},     spawn,          SHCMD("flameshot full --delay 5000") }),
     &((Keychord){3, {{MODKEY, XK_x}, {0, XK_s}, {0, XK_c}},     spawn,          SHCMD("flameshot full --clipboard") }),
 
+    /* Lock Screen */
+    &((Keychord){2, {{MODKEY, XK_x}, {0, XK_l}},      spawn,          SHCMD("slock") }),
     
     /* rofi scripts */
     &((Keychord){2, {{MODKEY, XK_r}, {0, XK_e}},     spawn,          SHCMD("rofi -modi emoji -show emoji") }),
@@ -153,17 +153,16 @@ static Keychord *keychords[] = {
     &((Keychord){1, {{MODKEY, XK_Tab}},              view,           {0} }),
     &((Keychord){1, {{MODKEY, XK_q}},                killclient,     {0} }),
 
-    /* Lock Screen */
-    &((Keychord){2, {{MODKEY, XK_x}, {0, XK_l}},      spawn,          SHCMD("slock") }),
-
     /* Layout manipulation */
-    &((Keychord){1, {{MODKEY|Mod1Mask, XK_comma}},  cyclelayout,    {.i = -1 } }),
-    &((Keychord){1, {{MODKEY|Mod1Mask, XK_period}}, cyclelayout,    {.i = +1 } }),
-    &((Keychord){1, {{MODKEY, XK_space}},              setlayout,      {0} }),
-    &((Keychord){1, {{MODKEY|ShiftMask, XK_f}},        togglefloating, {0} }),
-    &((Keychord){1, {{MODKEY, XK_f}},                  togglefullscr,  {0} }),
-    &((Keychord){1, {{MODKEY|ShiftMask, XK_j}},        movestack,      {.i = +1 } }),
-    &((Keychord){1, {{MODKEY|ShiftMask, XK_k}},        movestack,      {.i = -1 } }),
+    &((Keychord){1, {{MODKEY|Mod1Mask, XK_comma}},   cyclelayout,    {.i = -1 } }),
+    &((Keychord){1, {{MODKEY|Mod1Mask, XK_period}},  cyclelayout,    {.i = +1 } }),
+    &((Keychord){1, {{MODKEY, XK_space}},            setlayout,      {0} }),
+    &((Keychord){1, {{MODKEY|ShiftMask, XK_space}},  setlayout,      {.v = &layouts[0]} }),
+    &((Keychord){1, {{MODKEY|ShiftMask, XK_f}},      togglefloating, {0} }),
+    &((Keychord){1, {{MODKEY, XK_f}},                togglefullscr,  {0} }),
+    &((Keychord){1, {{MODKEY|ShiftMask, XK_j}},      movestack,      {.i = +1 } }),
+    &((Keychord){1, {{MODKEY|ShiftMask, XK_k}},      movestack,      {.i = -1 } }),
+    &((Keychord){1, {{MODKEY, XK_space}},            setlayout,      {.v = &layouts[1]} }),
 
     /* Tag management */
     &((Keychord){1, {{MODKEY, XK_0}},                view,           {.ui = ~0 } }),

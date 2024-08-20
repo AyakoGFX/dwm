@@ -5,6 +5,16 @@
 - Super + g: Launch dmenu
 - Super + Enter: Launch terminal (Alacritty)
 
+## Application Shortcuts
+- Super + o, b: Launch Thorium browser
+- Super + o, f: Launch PCManFM file manager
+- Super + o, v: Launch Kdenlive video editor
+- Super + o, p: Launch GIMP photo editor
+- Super + o, d: Launch GitHub Desktop
+- Super + o, r: Launch OBS
+- Super + o, t, n: Launch Neovim in Alacritty
+- Super + o, t, b: Launch btop in Alacritty
+
 ## Window Management
 - Super + b: Toggle bar
 - Super + j: Focus next window
@@ -19,6 +29,7 @@
 - Super + Alt + ,: Cycle to previous layout
 - Super + Alt + .: Cycle to next layout
 - Super + Space: Toggle between current and last used layout
+- Super + Shift + Space: Set default tiling layout
 - Super + Shift + f: Toggle floating for focused window
 - Super + f: Toggle fullscreen for focused window
 - Super + Shift + j: Move focused window down in stack
@@ -44,9 +55,9 @@
 - Super + Ctrl + Shift + q: Restart DWM
 
 ## Scratchpad
-- Super + n: toggle scratchpad
-- Super + Shift + n: add to scratchpad
-- Super + m: remove from scratchpad
+- Super + n: Toggle scratchpad
+- Super + Shift + n: Add to scratchpad
+- Super + m: Remove from scratchpad
 
 ## Brightness Control
 - Super + w: Increase brightness
