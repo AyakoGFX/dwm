@@ -1,0 +1,5 @@
+Sxiv.background: #000000
+Sxiv.foreground: #68aad2
+
+/*reload */
+/*xrdb -load ~/.Xresources*/

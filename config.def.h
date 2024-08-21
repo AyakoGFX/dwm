@@ -44,6 +44,7 @@ static const Rule rules[] = {
     { "Alacritty",NULL,     NULL,           0,         0,          1,           0,        -1 },
     { NULL,       NULL,     "Event Tester", 0,         0,          0,           1,        -1 }, /* xev */
     { "Volapplet",NULL,     NULL,           0,         1,          0,           1,        -1 },
+    { "Blueman-manager",NULL,NULL,           0,         1,          0,           1,        -1 },
 };
 
 /* Audio controls */
@@ -120,6 +121,11 @@ static Keychord *keychords[] = {
     &((Keychord){2, {{MODKEY, XK_o}, {0, XK_p}},                spawn,          {.v = photoditor } }),
     &((Keychord){2, {{MODKEY, XK_o}, {0, XK_d}},                spawn,          {.v = githubdesk } }),
     &((Keychord){2, {{MODKEY, XK_o}, {0, XK_r}},                spawn,          {.v = recording } }),
+    &((Keychord){2, {{MODKEY, XK_o}, {0, XK_e}},                spawn,          SHCMD("emacsclient -c -a 'emacs'") }),
+
+
+    /*kill all volapplet and cbatticon */
+    &((Keychord){2, {{MODKEY, XK_x}, {0, XK_x}},     spawn,          SHCMD("killall volapplet && killall cbatticon &") }),
 
     /* Terminal app */
     &((Keychord){3, {{MODKEY, XK_o}, {0, XK_t}, {0, XK_n}},     spawn,          SHCMD("alacritty -e nvim") }),

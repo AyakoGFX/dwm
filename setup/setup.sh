@@ -74,8 +74,9 @@ install_packages \
 # below pkg not tested
 #sudo pacman -S --noconfirm picom flameshot rofi dmenu acpi nitrogen polkit-gnome google-chrome pcmanfm xfce4-taskmanager btop brightnessctl
 
+cd ..
 mkdir -p ~/Pictures/SS/
-
+cp .Xresources ~/
 
 # Copy .dwm directory to home
 echo "Copying .dwm directory to home..."
@@ -106,9 +107,7 @@ clear
 
 # Set up dwm sessions
 echo "Setting up dwm sessions..."
-cd dwm-sessionsx
 sudo cp dwm.desktop /usr/share/xsessions/
-cd ..
 clear
 
 # Install dwmblocks
@@ -123,5 +122,5 @@ echo "Performing final installation..."
 sudo make clean install 
 clear
 # Uncomment the following line to remove object files and backups
-# rm *.o *.orig
+# rm *.o && rm *.orig && rm *.rej
 
