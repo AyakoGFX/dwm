@@ -97,6 +97,7 @@ static const char *videoeditor[] = { "org.kde.kdenlive", NULL };
 static const char *photoditor[]  = { "gimp", NULL };
 static const char *githubdesk[]  = { "github-desktop", NULL };
 static const char *recording[]   = { "obs", NULL };
+static const char *texteditor[] = { "cursor", NULL };
 
 static Keychord *keychords[] = {
 
@@ -122,6 +123,7 @@ static Keychord *keychords[] = {
     &((Keychord){2, {{MODKEY, XK_o}, {0, XK_d}},                spawn,          {.v = githubdesk } }),
     &((Keychord){2, {{MODKEY, XK_o}, {0, XK_r}},                spawn,          {.v = recording } }),
     &((Keychord){2, {{MODKEY, XK_o}, {0, XK_e}},                spawn,          SHCMD("emacsclient -c -a 'emacs'") }),
+    &((Keychord){2, {{MODKEY, XK_o}, {0, XK_t}},                spawn,          {.v = texteditor } }),
 
 
     /*kill all volapplet and cbatticon */
