@@ -64,7 +64,8 @@ install_packages \
 # yay -S ttf-defenestration
 # yay -S ttf-ms-win11-auto
 
-# applet yay -S volapplet-git
+# applet 
+# yay -S volapplet-git
 
 # installing yay
 # removed dep

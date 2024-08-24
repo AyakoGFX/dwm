@@ -91,7 +91,7 @@ static const char *brightness_up[]   = { "brightnessctl", "set", "5%+", NULL };
 static const char *brightness_down[] = { "brightnessctl", "set", "5%-", NULL };
 
 /* Application open */
-static const char *browser[]     = { "thorium-browser", NULL };
+static const char *browser[]     = { "google-chrome-stable", NULL };
 static const char *filemanager[] = { "pcmanfm", NULL };
 static const char *videoeditor[] = { "org.kde.kdenlive", NULL };
 static const char *photoditor[]  = { "gimp", NULL };
