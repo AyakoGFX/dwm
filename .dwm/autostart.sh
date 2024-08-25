@@ -6,6 +6,9 @@ nitrogen --restore &
 # Start Picom for compositing
 picom &
 
+# yay -S picom-ftlabs-git
+# picom --animations -b &
+
 emacs --daemon &
 
 clipmenud &

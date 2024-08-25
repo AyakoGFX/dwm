@@ -148,17 +148,17 @@ static Keychord *keychords[] = {
     &((Keychord){2, {{MODKEY, XK_e}, {0, XK_x}},                spawn,          SHCMD("emacsclient -e '(kill-emacs)'") }),
 
     /*kill all volapplet and cbatticon */
-    &((Keychord){2, {{MODKEY, XK_a}, {0, XK_x}},                spawn,          SHCMD("killall volapplet && killall cbatticon") }),
+    &((Keychord){2, {{MODKEY, XK_x}, {0, XK_x}},                spawn,          SHCMD("killall volapplet && killall cbatticon") }),
 
     /* Terminal app */
     &((Keychord){3, {{MODKEY, XK_o}, {0, XK_t}, {0, XK_n}},     spawn,          SHCMD("alacritty -e nvim") }),
     &((Keychord){3, {{MODKEY, XK_o}, {0, XK_t}, {0, XK_b}},     spawn,          SHCMD("alacritty -e btop") }),
 
     /* Screenshot with flameshot */
-    &((Keychord){3, {{MODKEY, XK_a}, {0, XK_s}, {0, XK_s}},     spawn,          SHCMD("flameshot gui") }),
-    &((Keychord){3, {{MODKEY, XK_a}, {0, XK_s}, {0, XK_f}},     spawn,          SHCMD("flameshot full --path ~/Pictures/SS/") }),
-    &((Keychord){3, {{MODKEY, XK_a}, {0, XK_s}, {0, XK_d}},     spawn,          SHCMD("flameshot full --delay 5000") }),
-    &((Keychord){3, {{MODKEY, XK_a}, {0, XK_s}, {0, XK_c}},     spawn,          SHCMD("flameshot full --clipboard") }),
+    &((Keychord){3, {{MODKEY, XK_x}, {0, XK_s}, {0, XK_s}},     spawn,          SHCMD("flameshot gui") }),
+    &((Keychord){3, {{MODKEY, XK_x}, {0, XK_s}, {0, XK_f}},     spawn,          SHCMD("flameshot full --path ~/Pictures/SS/") }),
+    &((Keychord){3, {{MODKEY, XK_x}, {0, XK_s}, {0, XK_d}},     spawn,          SHCMD("flameshot full --delay 5000") }),
+    &((Keychord){3, {{MODKEY, XK_x}, {0, XK_s}, {0, XK_c}},     spawn,          SHCMD("flameshot full --clipboard") }),
 
     /* Lock Screen */
     &((Keychord){2, {{MODKEY, XK_x}, {0, XK_l}},      spawn,          SHCMD("slock") }),
@@ -220,15 +220,15 @@ static Keychord *keychords[] = {
     &((Keychord){1, {{MODKEY|ShiftMask, XK_e}},             quit,           {0} }),
     &((Keychord){1, {{MODKEY|ControlMask|ShiftMask, XK_q}}, quit,           {1} }), 
 
-    /* Scratchpad */
+    /* Scratchpad dianamic */
     &((Keychord){1, {{MODKEY, XK_n}},                       scratchpad_show,   {0} }),
     &((Keychord){1, {{MODKEY|ShiftMask, XK_n}},             scratchpad_hide,   {0} }),
     &((Keychord){1, {{MODKEY, XK_m}},                       scratchpad_remove, {0} }),
 
-        /* Scratchpads */
+        /* Scratchpads  */
     &((Keychord){1, {{MODKEY, XK_y}},            togglescratch,  {.ui = 0} }),
     &((Keychord){1, {{MODKEY, XK_u}},            togglescratch,  {.ui = 1} }),
-    &((Keychord){1, {{MODKEY, XK_x}},            togglescratch,  {.ui = 2} }),
+    &((Keychord){1, {{MODKEY, XK_i}},            togglescratch,  {.ui = 2} }),
 };
 
 /* Button definitions */
@@ -241,7 +241,7 @@ static const Button buttons[] = {
     { ClkStatusText,        0,              Button2,        spawn,          {.v = termcmd } },
     { ClkClientWin,         MODKEY,         Button1,        movemouse,      {0} },
     { ClkClientWin,         MODKEY,         Button2,        togglefloating, {0} },
-    { ClkClientWin,         MODKEY,         Button1,        resizemouse,    {0} },
+    { ClkClientWin,         MODKEY,         Button3,        resizemouse,    {0} },
     { ClkTagBar,            0,              Button1,        view,           {0} },
     { ClkTagBar,            0,              Button3,        toggleview,     {0} },
     { ClkTagBar,            MODKEY,         Button1,        tag,            {0} },
