@@ -102,18 +102,18 @@ static const char *texteditor[] = { "cursor", NULL };
 static Keychord *keychords[] = {
 
     /* Brightness control */
-    &((Keychord){1, {{MODKEY, XK_w}},                           spawn,          {.v = brightness_up } }),
-    &((Keychord){1, {{MODKEY, XK_s}},                           spawn,          {.v = brightness_down } }),
+    &((Keychord){1, {{MODKEY, XK_w}},                spawn,          {.v = brightness_up } }),
+    &((Keychord){1, {{MODKEY, XK_s}},                spawn,          {.v = brightness_down } }),
 
     /* Audio control */
-    &((Keychord){1, {{MODKEY|ShiftMask, XK_w}},                 spawn,          {.v = upvol   } }),
-    &((Keychord){1, {{MODKEY|ShiftMask, XK_s}},                 spawn,          {.v = downvol } }),
-    &((Keychord){1, {{MODKEY, XK_F1}},                          spawn,          {.v = mutevol } }),
+    &((Keychord){1, {{MODKEY|ShiftMask, XK_w}},      spawn,          {.v = upvol   } }),
+    &((Keychord){1, {{MODKEY|ShiftMask, XK_s}},      spawn,          {.v = downvol } }),
+    &((Keychord){1, {{MODKEY, XK_F1}},               spawn,          {.v = mutevol } }),
 
     /* Application launchers */
-    &((Keychord){1, {{MODKEY, XK_d}},                           spawn,          {.v = dmenucmd } }),
-    &((Keychord){1, {{MODKEY, XK_g}},                           spawn,          {.v = DmenuRun } }),
-    &((Keychord){1, {{MODKEY, XK_Return}},                      spawn,          {.v = termcmd } }),
+    &((Keychord){1, {{MODKEY, XK_d}},                spawn,          {.v = dmenucmd } }),
+    &((Keychord){1, {{MODKEY, XK_g}},                spawn,          {.v = DmenuRun } }),
+    &((Keychord){1, {{MODKEY, XK_Return}},           spawn,          {.v = termcmd } }),
 
     /* Application open */
     &((Keychord){2, {{MODKEY, XK_o}, {0, XK_b}},                spawn,          {.v = browser } }),
@@ -122,11 +122,12 @@ static Keychord *keychords[] = {
     &((Keychord){2, {{MODKEY, XK_o}, {0, XK_p}},                spawn,          {.v = photoditor } }),
     &((Keychord){2, {{MODKEY, XK_o}, {0, XK_d}},                spawn,          {.v = githubdesk } }),
     &((Keychord){2, {{MODKEY, XK_o}, {0, XK_r}},                spawn,          {.v = recording } }),
+    &((Keychord){2, {{MODKEY, XK_o}, {0, XK_e}},                spawn,          SHCMD("emacsclient -c -a 'emacs'") }),
     &((Keychord){2, {{MODKEY, XK_o}, {0, XK_t}},                spawn,          {.v = texteditor } }),
 
 
     /*kill all volapplet and cbatticon */
-    &((Keychord){2, {{MODKEY, XK_x}, {0, XK_x}},                spawn,          SHCMD("killall volapplet && killall cbatticon &") }),
+    &((Keychord){2, {{MODKEY, XK_x}, {0, XK_x}},     spawn,          SHCMD("killall volapplet && killall cbatticon &") }),
 
     /* Terminal app */
     &((Keychord){3, {{MODKEY, XK_o}, {0, XK_t}, {0, XK_n}},     spawn,          SHCMD("alacritty -e nvim") }),
@@ -138,21 +139,16 @@ static Keychord *keychords[] = {
     &((Keychord){3, {{MODKEY, XK_x}, {0, XK_s}, {0, XK_d}},     spawn,          SHCMD("flameshot full --delay 5000") }),
     &((Keychord){3, {{MODKEY, XK_x}, {0, XK_s}, {0, XK_c}},     spawn,          SHCMD("flameshot full --clipboard") }),
 
-    /*emacs*/
-    &((Keychord){2, {{MODKEY, XK_e}, {0, XK_e}},                spawn,          SHCMD("emacsclient -c -a 'emacs'") }),
-    &((Keychord){2, {{MODKEY, XK_e}, {0, XK_x}},                spawn,          SHCMD("emacsclient -e '(kill-emacs)'") }),
-
-
     /* Lock Screen */
-    &((Keychord){2, {{MODKEY, XK_x}, {0, XK_l}},                spawn,          SHCMD("slock") }),
+    &((Keychord){2, {{MODKEY, XK_x}, {0, XK_l}},      spawn,          SHCMD("slock") }),
     
     /* Rofi scripts */
-    &((Keychord){2, {{MODKEY, XK_r}, {0, XK_e}},                spawn,          SHCMD("rofi -modi emoji -show emoji") }),
-    &((Keychord){2, {{MODKEY, XK_r}, {0, XK_c}},                spawn,          SHCMD("clipmenu") }),
-    &((Keychord){2, {{MODKEY, XK_r}, {0, XK_w}},                spawn,          SHCMD("rofi-wifi") }),
-    &((Keychord){2, {{MODKEY, XK_r}, {0, XK_b}},                spawn,          SHCMD("rofi-bluetooth") }),
-    &((Keychord){2, {{MODKEY, XK_r}, {0, XK_p}},                spawn,          SHCMD("rofi-passmenu") }),
-    &((Keychord){2, {{MODKEY, XK_r}, {0, XK_o}},                spawn,          SHCMD("rofi -show power-menu -modi power-menu:rofi-power-menu") }),
+    &((Keychord){2, {{MODKEY, XK_r}, {0, XK_e}},     spawn,          SHCMD("rofi -modi emoji -show emoji") }),
+    &((Keychord){2, {{MODKEY, XK_r}, {0, XK_c}},     spawn,          SHCMD("clipmenu") }),
+    &((Keychord){2, {{MODKEY, XK_r}, {0, XK_w}},     spawn,          SHCMD("rofi-wifi") }),
+    &((Keychord){2, {{MODKEY, XK_r}, {0, XK_b}},     spawn,          SHCMD("rofi-bluetooth") }),
+    &((Keychord){2, {{MODKEY, XK_r}, {0, XK_p}},     spawn,          SHCMD("rofi-passmenu") }),
+    &((Keychord){2, {{MODKEY, XK_r}, {0, XK_o}},     spawn,          SHCMD("rofi -show power-menu -modi power-menu:rofi-power-menu") }),
 
     /* Window management */
     &((Keychord){1, {{MODKEY, XK_b}},                togglebar,      {0} }),
@@ -225,8 +221,3 @@ static const Button buttons[] = {
     { ClkTagBar,            MODKEY,         Button1,        tag,            {0} },
     { ClkTagBar,            MODKEY,         Button3,        toggletag,      {0} },
 };
-
-/* examples
-    &((Keychord){2, {{MODKEY, XK_e}, {MODKEY, XK_e}},           spawn,          SHCMD("emacsclient -c -a 'emacs'") }),
-    &((Keychord){2, {{MODKEY, XK_e}, {MODKEY, XK_x}},           spawn,          SHCMD("emacsclient -e '(kill-emacs)'") }),
-*/
