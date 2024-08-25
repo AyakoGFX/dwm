@@ -22,6 +22,7 @@ install_packages \
     extra/libxft \
     extra/imlib2 \
     extra/xcb-util\
+    extra/xorg-xauth \
     extra/libxcb
 
 
