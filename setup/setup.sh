@@ -46,7 +46,8 @@ install_packages \
     slock \
     trash-cli \
     sxiv \
-    network-manager-applet
+    rofi-emoji \
+    network-manager-applet 
     # pasystray  use yay -S volapplet-git
 
 
