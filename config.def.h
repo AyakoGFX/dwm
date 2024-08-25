@@ -34,7 +34,7 @@ typedef struct {
     const char *name;
     const void *cmd;
 } Sp;
-const char *spcmd1[] = {"st", "-n", "spterm", "-g", "120x34", NULL };
+const char *spcmd1[] = {"alacritty", "--class", "spterm", "--config-file", "/home/ayako/.config/alacritty/srcpad/ala.toml", NULL };
 const char *spcmd2[] = {"st", "-n", "spfm", "-g", "144x41", "-e", "ranger", NULL };
 const char *spcmd3[] = {"keepassxc", NULL };
 static Sp scratchpads[] = {
@@ -141,22 +141,24 @@ static Keychord *keychords[] = {
     &((Keychord){2, {{MODKEY, XK_o}, {0, XK_p}},                spawn,          {.v = photoditor } }),
     &((Keychord){2, {{MODKEY, XK_o}, {0, XK_d}},                spawn,          {.v = githubdesk } }),
     &((Keychord){2, {{MODKEY, XK_o}, {0, XK_r}},                spawn,          {.v = recording } }),
-    &((Keychord){2, {{MODKEY, XK_o}, {0, XK_e}},                spawn,          SHCMD("emacsclient -c -a 'emacs'") }),
-    &((Keychord){2, {{MODKEY, XK_o}, {0, XK_t}},                spawn,          {.v = texteditor } }),
+    &((Keychord){2, {{MODKEY, XK_o}, {0, XK_e}},                spawn,          {.v = texteditor } }),
 
+    /*emacs*/
+    &((Keychord){2, {{MODKEY, XK_e}, {0, XK_e}},                spawn,          SHCMD("emacsclient -c -a 'emacs'") }),
+    &((Keychord){2, {{MODKEY, XK_e}, {0, XK_x}},                spawn,          SHCMD("emacsclient -e '(kill-emacs)'") }),
 
     /*kill all volapplet and cbatticon */
-    &((Keychord){2, {{MODKEY, XK_x}, {0, XK_x}},     spawn,          SHCMD("killall volapplet && killall cbatticon &") }),
+    &((Keychord){2, {{MODKEY, XK_a}, {0, XK_x}},                spawn,          SHCMD("killall volapplet && killall cbatticon") }),
 
     /* Terminal app */
     &((Keychord){3, {{MODKEY, XK_o}, {0, XK_t}, {0, XK_n}},     spawn,          SHCMD("alacritty -e nvim") }),
     &((Keychord){3, {{MODKEY, XK_o}, {0, XK_t}, {0, XK_b}},     spawn,          SHCMD("alacritty -e btop") }),
 
     /* Screenshot with flameshot */
-    &((Keychord){3, {{MODKEY, XK_x}, {0, XK_s}, {0, XK_s}},     spawn,          SHCMD("flameshot gui") }),
-    &((Keychord){3, {{MODKEY, XK_x}, {0, XK_s}, {0, XK_f}},     spawn,          SHCMD("flameshot full --path ~/Pictures/SS/") }),
-    &((Keychord){3, {{MODKEY, XK_x}, {0, XK_s}, {0, XK_d}},     spawn,          SHCMD("flameshot full --delay 5000") }),
-    &((Keychord){3, {{MODKEY, XK_x}, {0, XK_s}, {0, XK_c}},     spawn,          SHCMD("flameshot full --clipboard") }),
+    &((Keychord){3, {{MODKEY, XK_a}, {0, XK_s}, {0, XK_s}},     spawn,          SHCMD("flameshot gui") }),
+    &((Keychord){3, {{MODKEY, XK_a}, {0, XK_s}, {0, XK_f}},     spawn,          SHCMD("flameshot full --path ~/Pictures/SS/") }),
+    &((Keychord){3, {{MODKEY, XK_a}, {0, XK_s}, {0, XK_d}},     spawn,          SHCMD("flameshot full --delay 5000") }),
+    &((Keychord){3, {{MODKEY, XK_a}, {0, XK_s}, {0, XK_c}},     spawn,          SHCMD("flameshot full --clipboard") }),
 
     /* Lock Screen */
     &((Keychord){2, {{MODKEY, XK_x}, {0, XK_l}},      spawn,          SHCMD("slock") }),
@@ -245,3 +247,12 @@ static const Button buttons[] = {
     { ClkTagBar,            MODKEY,         Button1,        tag,            {0} },
     { ClkTagBar,            MODKEY,         Button3,        toggletag,      {0} },
 };
+
+
+
+/* examples
+    &((Keychord){2, {{MODKEY, XK_e}, {MODKEY, XK_e}},           spawn,          SHCMD("emacsclient -c -a 'emacs'") }),
+    &((Keychord){2, {{MODKEY, XK_e}, {MODKEY, XK_x}},           spawn,          SHCMD("emacsclient -e '(kill-emacs)'") }),
+*/
+
+
