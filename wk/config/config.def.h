@@ -1,0 +1,47 @@
+#ifndef WK_CONFIG_CONFIG_H_
+#define WK_CONFIG_CONFIG_H_
+
+#include <stdint.h>
+
+/* menu include */
+#include "src/common/menu.h"
+
+/* Delimiter when displaying chords. */
+static const char* delimiter = " -> ";
+/* Delay between last keypress and first time displaying the menu. Value in milliseconds. */
+static uint32_t delay = 1;
+/* Max number of columns to use. */
+static const uint32_t maxCols = 5;
+/* Menu width. Set to '-1' for 1/2 the width of your screen. */
+static const int32_t menuWidth = -1;
+/* Menu gap between top/bottom of screen. Set to '-1' for a gap of 1/10th of the screen height. */
+static const int32_t menuGap = -1;
+/* X-Padding around key/description text in cells. */
+static const uint32_t widthPadding = 7;
+/* Y-Padding around key/description text in cells. */
+static const uint32_t heightPadding = 3;
+/* Position to place the menu. '0' = bottom; '1' = top. */
+static const uint32_t menuPosition = 0;
+/* Menu border width */
+static const uint32_t borderWidth = 2;
+/* Menu border radius. 0 means no curve */
+static const double borderRadius = 0;
+/* Menu foreground color */
+static const char* foreground[FOREGROUND_COLOR_LAST] = {
+    "#DCD7BA", /* Key color */
+    "#525259", /* Delimiter color */
+    "#AF9FC9", /* Prefix color */
+    "#DCD7BA", /* Chord color */
+};
+/* Menu background color */
+static const char* background = "#16161e";
+/* Menu border color */
+static const char* border = "#68aad2";
+/* Default shell to run chord commands with. */
+static const char* shell = "/bin/sh";
+/* Pango font description i.e. 'Noto Mono, M+ 1c, ..., 16'. */
+static const char* font = "monospace, 14";
+/* Keys to use for chord arrays */
+static const char* implicitArrayKeys = "asdfghjkl;";
+
+#endif /* WK_CONFIG_CONFIG_H_ */

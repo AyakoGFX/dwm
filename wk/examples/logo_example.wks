@@ -1,0 +1,6 @@
+:menu-width 550
+:font "monospace, 30"
+[
+    (w "which")
+    (k "key")
+] "(null)" +write %{{%(key)}}

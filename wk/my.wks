@@ -1,0 +1,47 @@
+x "Kill" %{{killall volapplet && killall cbatticon}}
+l "LockScrean" %{{slock}}
+
+e "+Emacs"
+{
+    s "start server" %{{emacs --daemon}}
+    s "stop server" %{{emacsclient -e '(kill-emacs)'}}
+    e "open Emacs-C" %{{emacsclient -c -a 'emacs'}}
+    E "open Emacs" %{{emacs}}
+
+}
+
+t "+Term-app"
+{
+    b "btop" %{{alacritty -e btop}}
+    n "nvim" %{{alacritty -e nvim}}
+}
+
+o "+Open"
+{
+    b "Browser" %{{google-chrome-stable}}
+    f "Filemanager" %{{pcmanfm}}
+    g "Gimp" %{{gimp}}
+    o "OBS" %{{obs}}
+    c "Cursor" %{{cursor}}
+    d "Github-Desktop" %{{github-desktop}}
+    k "kdenlive" %{{org.kde.kdenlive}}
+
+}
+
+r "+rofi"
+{
+    e "Emoji" %{{rofi -modi emoji -show emoji}}
+    c "Clipman" %{{clipman}}
+    w "rofi-wifi" %{{rofi-wifi}}
+    b "rofi-bluetooth" %{{rofi-bluetooth}}
+    p "rofi-passmenu" %{{rofi-passmenu}}
+    P "POWER-MENU" %{{rofi -show power-menu -modi power-menu:rofi-power-menu}}
+}
+
+s "+Screenshot"
+{
+    s "flameshot gui" %{{flameshot gui}}
+    f "full-S" %{{flameshot full --path ~/Pictures/SS/}}
+    d "delay 5s" %{{flameshot full --delay 5000}}
+    c "full-S-clipboard" %{{}}
+}

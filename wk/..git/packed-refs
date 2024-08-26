@@ -1,0 +1,4 @@
+# pack-refs with: peeled fully-peeled sorted 
+e1d49082b45a559a6fcc60fa116c097d5f725da5 refs/remotes/origin/master
+d764659eca008e81b5a5fc09a8989dcd7339efef refs/tags/v0.1.0
+e1d49082b45a559a6fcc60fa116c097d5f725da5 refs/tags/v0.1.1

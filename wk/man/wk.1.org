@@ -1,0 +1,119 @@
+#+title: WK(1)
+#+author: 3L0C <dotbox at mailbox.org>
+
+* NAME
+
+wk - Which-Key via X11 and Wayland, inspired by *dmenu* and
+*bemenu* respectively.
+
+* SYNOPSIS
+
+*wk* [options]
+
+* DESCRIPTION
+
+*wk* provides visual feedback when executing user defined
+key chords via a popup menu. The key chords may be
+precompiled into *wk* for users who maintain their own copy
+of *wk*. For users looking for a more dynamic experience,
+*wk* can read key chords from a *wks*​(5) file or script.
+
+* OPTIONS
+
+- *-h, --help* ::
+  Display help message and exit.
+
+- *-v, --version* ::
+  Display version number and exit.
+
+- *-d, --debug* ::
+  Print debug information during execution.
+
+- *-D, --delay* /INT/ ::
+  Delay the popup menu by /INT/ milliseconds from startup or
+  last keypress (default 1000 ms).
+
+- *-t, --top* ::
+  Position menu at top of screen.
+
+- *-b, --bottom* ::
+  Position menu at bottom of screen.
+
+- *-s, --script* ::
+  Read *wks* script from stdin to use as key chords.
+
+- *-S, --sort* ::
+  Sort key chords read from *--key-chords, --script, or --transpile*.
+
+- *-m, --max-columns* /INT/ ::
+  Set the maximum menu columns to /INT/ (default 5).
+
+- *-p, --press* /KEY(s)/ ::
+  Press /KEY(s)/ before dispalying menu. See *TRIGGER KEY*
+  in the *wks* man page for more info.
+
+- *-T, --transpile* /FILE/ ::
+  Transpile /FILE/ to valid 'key_chords.h' syntax and print to stdout.
+
+- *-k, --key-chords* /FILE/ ::
+  Use /FILE/ for key chords rather than those precompiled.
+
+- *-w, --menu-width* /INT/ ::
+  Set menu width to /INT/. Set to '-1' for a width equal to
+  1/2 of the screen width (default -1).
+
+- *-g, --menu-gap* /INT/ ::
+  Set menu gap between top/bottom of screen to /INT/. Set to
+  '-1' for a gap equal to 1/10th of the screen height
+  (default -1).
+ 
+- *--border-width* /INT/ ::
+  Set border width to /INT/ (default 4).
+
+- *--border-radius* /NUM/ ::
+  Set border radius to /NUM/ degrees. 0 means no curve
+  (default 0).
+
+- *--wpadding* /INT/ ::
+  Set left and right padding around hint text to /INT/
+  (default 6).
+
+- *--hpadding* /INT/ ::
+  Set up and down padding around hint text to /INT/.
+  (default 2)
+
+- *--fg* /COLOR/ ::
+  Set all menu foreground text to /COLOR/ where color is
+  some hex string i.e. '#F1CD39' (default unset).
+
+- *--fg-key* /COLOR/ ::
+  Set foreground key to COLOR (default '#DCD7BA').
+
+- *--fg-delimiter* /COLOR/ ::
+  Set foreground delimiter to COLOR (default '#525259').
+
+- *--fg-prefix* /COLOR/ ::
+  Set foreground prefix to COLOR (default '#AF9FC9').
+
+- *--fg-chord* /COLOR/ ::
+  Set foreground chord to COLOR (default '#DCD7BA').
+
+- *--bg* /COLOR/ ::
+  Set background to COLOR (default '#181616').
+
+- *--bd* /COLOR/ ::
+  Set border to COLOR (default '#7FB4CA').
+
+- *--shell* /STRING/ ::
+  Set shell to STRING (default '/bin/sh').
+
+- *--font* /STRING/ ::
+  Set font to STRING. Should be a valid Pango font
+  description (default 'monospace, 14').
+
+* BUG REPORTS
+If you find a bug in *wk*, please report it at
+https://github.com/3L0C/wk.
+
+* SEE ALSO
+*wks*​(5)
