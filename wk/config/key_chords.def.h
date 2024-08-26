@@ -79,42 +79,6 @@ KeyChord builtinKeyChords[] = {
                         .ctrl = false, .alt = false, .hyper = false, .shift = false
                     },
                     .special = SPECIAL_KEY_NONE,
-                    .repr = "s", .len = 1
-                },
-                .description = "start server", 
-                .command = "emacs --daemon", 
-                .before = NULL, 
-                .after = NULL, 
-                .flags = {
-                    false, false, false, false, false, false, false,
-                    false, false, false, false, false, false, false
-                }, .keyChords = NULL
-            },
-            {
-                .state = KEY_CHORD_STATE_NOT_NULL, 
-                .key = {
-                    .mods = {
-                        .ctrl = false, .alt = false, .hyper = false, .shift = false
-                    },
-                    .special = SPECIAL_KEY_NONE,
-                    .repr = "s", .len = 1
-                },
-                .description = "stop server", 
-                .command = "emacsclient -e '(kill-emacs)'", 
-                .before = NULL, 
-                .after = NULL, 
-                .flags = {
-                    false, false, false, false, false, false, false,
-                    false, false, false, false, false, false, false
-                }, .keyChords = NULL
-            },
-            {
-                .state = KEY_CHORD_STATE_NOT_NULL, 
-                .key = {
-                    .mods = {
-                        .ctrl = false, .alt = false, .hyper = false, .shift = false
-                    },
-                    .special = SPECIAL_KEY_NONE,
                     .repr = "e", .len = 1
                 },
                 .description = "open Emacs-C", 
@@ -137,6 +101,42 @@ KeyChord builtinKeyChords[] = {
                 },
                 .description = "open Emacs", 
                 .command = "emacs", 
+                .before = NULL, 
+                .after = NULL, 
+                .flags = {
+                    false, false, false, false, false, false, false,
+                    false, false, false, false, false, false, false
+                }, .keyChords = NULL
+            },
+            {
+                .state = KEY_CHORD_STATE_NOT_NULL, 
+                .key = {
+                    .mods = {
+                        .ctrl = false, .alt = false, .hyper = false, .shift = false
+                    },
+                    .special = SPECIAL_KEY_NONE,
+                    .repr = "s", .len = 1
+                },
+                .description = "start server", 
+                .command = "emacs --daemon", 
+                .before = NULL, 
+                .after = NULL, 
+                .flags = {
+                    false, false, false, false, false, false, false,
+                    false, false, false, false, false, false, false
+                }, .keyChords = NULL
+            },
+            {
+                .state = KEY_CHORD_STATE_NOT_NULL, 
+                .key = {
+                    .mods = {
+                        .ctrl = false, .alt = false, .hyper = false, .shift = false
+                    },
+                    .special = SPECIAL_KEY_NONE,
+                    .repr = "S", .len = 1
+                },
+                .description = "stop server", 
+                .command = "emacsclient -e '(kill-emacs)'", 
                 .before = NULL, 
                 .after = NULL, 
                 .flags = {
@@ -172,10 +172,10 @@ KeyChord builtinKeyChords[] = {
                         .ctrl = false, .alt = false, .hyper = false, .shift = false
                     },
                     .special = SPECIAL_KEY_NONE,
-                    .repr = "b", .len = 1
+                    .repr = "n", .len = 1
                 },
-                .description = "btop", 
-                .command = "alacritty -e btop", 
+                .description = "nvim", 
+                .command = "alacritty -e nvim", 
                 .before = NULL, 
                 .after = NULL, 
                 .flags = {
@@ -190,10 +190,10 @@ KeyChord builtinKeyChords[] = {
                         .ctrl = false, .alt = false, .hyper = false, .shift = false
                     },
                     .special = SPECIAL_KEY_NONE,
-                    .repr = "n", .len = 1
+                    .repr = "b", .len = 1
                 },
-                .description = "nvim", 
-                .command = "alacritty -e nvim", 
+                .description = "btop", 
+                .command = "alacritty -e btop", 
                 .before = NULL, 
                 .after = NULL, 
                 .flags = {
@@ -360,7 +360,7 @@ KeyChord builtinKeyChords[] = {
             .special = SPECIAL_KEY_NONE,
             .repr = "r", .len = 1
         },
-        .description = "+rofi", 
+        .description = "+Rofi", 
         .command = NULL, 
         .before = NULL, 
         .after = NULL, 
@@ -396,8 +396,8 @@ KeyChord builtinKeyChords[] = {
                     .special = SPECIAL_KEY_NONE,
                     .repr = "c", .len = 1
                 },
-                .description = "Clipman", 
-                .command = "clipman", 
+                .description = "clipmenu", 
+                .command = "clipmenu", 
                 .before = NULL, 
                 .after = NULL, 
                 .flags = {

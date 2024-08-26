@@ -3,17 +3,18 @@ l "LockScrean" %{{slock}}
 
 e "+Emacs"
 {
-    s "start server" %{{emacs --daemon}}
-    s "stop server" %{{emacsclient -e '(kill-emacs)'}}
     e "open Emacs-C" %{{emacsclient -c -a 'emacs'}}
     E "open Emacs" %{{emacs}}
+    s "start server" %{{emacs --daemon}}
+    S "stop server" %{{emacsclient -e '(kill-emacs)'}}
+
 
 }
 
 t "+Term-app"
 {
-    b "btop" %{{alacritty -e btop}}
     n "nvim" %{{alacritty -e nvim}}
+    b "btop" %{{alacritty -e btop}}
 }
 
 o "+Open"
@@ -28,10 +29,10 @@ o "+Open"
 
 }
 
-r "+rofi"
+r "+Rofi"
 {
     e "Emoji" %{{rofi -modi emoji -show emoji}}
-    c "Clipman" %{{clipman}}
+    c "clipmenu" %{{clipmenu}}
     w "rofi-wifi" %{{rofi-wifi}}
     b "rofi-bluetooth" %{{rofi-bluetooth}}
     p "rofi-passmenu" %{{rofi-passmenu}}
