@@ -4,7 +4,7 @@
 # ./wk --key-chords my.wks
 #
 # if ecerythng working as expected convert wks file yo key_chords.def.h
-# ./wk --transpile my.wks > config/key_chords.def.h
+wk --transpile my.wks > config/key_chords.def.h
 
 rm config/key_chords.h
 rm config/config.h
@@ -16,7 +16,6 @@ make x11
 # make wayland
 
 sudo make install
-
 
 #https://github.com/3L0C/wks-mode.git
 # https://github.com/3L0C/wk.git

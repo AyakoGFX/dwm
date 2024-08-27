@@ -250,7 +250,7 @@ KeyChord builtinKeyChords[] = {
                     .repr = "f", .len = 1
                 },
                 .description = "Filemanager", 
-                .command = "pcmanfm", 
+                .command = "thunar", 
                 .before = NULL, 
                 .after = NULL, 
                 .flags = {
@@ -341,6 +341,42 @@ KeyChord builtinKeyChords[] = {
                 },
                 .description = "kdenlive", 
                 .command = "org.kde.kdenlive", 
+                .before = NULL, 
+                .after = NULL, 
+                .flags = {
+                    false, false, false, false, false, false, false,
+                    false, false, false, false, false, false, false
+                }, .keyChords = NULL
+            },
+            {
+                .state = KEY_CHORD_STATE_NOT_NULL, 
+                .key = {
+                    .mods = {
+                        .ctrl = false, .alt = false, .hyper = false, .shift = false
+                    },
+                    .special = SPECIAL_KEY_NONE,
+                    .repr = "t", .len = 1
+                },
+                .description = "xfce-taskmanager", 
+                .command = "xfce4-taskmanager", 
+                .before = NULL, 
+                .after = NULL, 
+                .flags = {
+                    false, false, false, false, false, false, false,
+                    false, false, false, false, false, false, false
+                }, .keyChords = NULL
+            },
+            {
+                .state = KEY_CHORD_STATE_NOT_NULL, 
+                .key = {
+                    .mods = {
+                        .ctrl = false, .alt = false, .hyper = false, .shift = false
+                    },
+                    .special = SPECIAL_KEY_NONE,
+                    .repr = "T", .len = 1
+                },
+                .description = "Timeshift", 
+                .command = "timeshift-launcher", 
                 .before = NULL, 
                 .after = NULL, 
                 .flags = {
@@ -562,7 +598,7 @@ KeyChord builtinKeyChords[] = {
                     .repr = "c", .len = 1
                 },
                 .description = "full-S-clipboard", 
-                .command = NULL, 
+                .command = "flameshot full --clipboard", 
                 .before = NULL, 
                 .after = NULL, 
                 .flags = {

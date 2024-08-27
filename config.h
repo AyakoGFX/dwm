@@ -118,7 +118,7 @@ static Keychord *keychords[] = {
 
     /*wk*/
     &((Keychord){1, {{MODKEY, XK_o}},                spawn,          SHCMD("wk") }),
-
+    
     /* Audio control */
     &((Keychord){1, {{MODKEY|ShiftMask, XK_w}},      spawn,          {.v = upvol   } }),
     &((Keychord){1, {{MODKEY|ShiftMask, XK_s}},      spawn,          {.v = downvol } }),
@@ -140,8 +140,8 @@ static Keychord *keychords[] = {
     &((Keychord){1, {{MODKEY, XK_q}},                killclient,     {0} }),
 
     /* Layout manipulation */
-    &((Keychord){1, {{MODKEY|Mod1Mask, XK_comma}},   cyclelayout,    {.i = -1 } }),
-    &((Keychord){1, {{MODKEY|Mod1Mask, XK_period}},  cyclelayout,    {.i = +1 } }),
+    &((Keychord){1, {{MODKEY, XK_comma}},   cyclelayout,    {.i = -1 } }),
+    &((Keychord){1, {{MODKEY, XK_period}},  cyclelayout,    {.i = +1 } }),
     &((Keychord){1, {{MODKEY, XK_space}},            setlayout,      {0} }),
     &((Keychord){1, {{MODKEY|ShiftMask, XK_space}},  setlayout,      {.v = &layouts[0]} }),
     &((Keychord){1, {{MODKEY|ShiftMask, XK_f}},      togglefloating, {0} }),
@@ -153,8 +153,8 @@ static Keychord *keychords[] = {
     /* Tag management */
     &((Keychord){1, {{MODKEY, XK_0}},                view,           {.ui = ~0 } }),
     &((Keychord){1, {{MODKEY|ShiftMask, XK_0}},      tag,            {.ui = ~0 } }),
-    &((Keychord){1, {{MODKEY, XK_comma}},            focusmon,       {.i = -1 } }),
-    &((Keychord){1, {{MODKEY, XK_period}},           focusmon,       {.i = +1 } }),
+    &((Keychord){1, {{MODKEY|ControlMask, XK_comma}},  focusmon,       {.i = -1 } }),
+    &((Keychord){1, {{MODKEY|ControlMask, XK_period}}, focusmon,       {.i = +1 } }),
     &((Keychord){1, {{MODKEY|ShiftMask, XK_comma}},  tagmon,         {.i = -1 } }),
     &((Keychord){1, {{MODKEY|ShiftMask, XK_period}}, tagmon,         {.i = +1 } }),
 
@@ -218,6 +218,8 @@ static const char *photoditor[]  = { "gimp", NULL };
 static const char *githubdesk[]  = { "github-desktop", NULL };
 static const char *recording[]   = { "obs", NULL };
 static const char *texteditor[] = { "cursor", NULL };
+
+Mod3Mask
 
     &((Keychord){2, {{MODKEY, XK_e}, {MODKEY, XK_e}},           spawn,          SHCMD("emacsclient -c -a 'emacs'") }),
     &((Keychord){2, {{MODKEY, XK_e}, {MODKEY, XK_x}},           spawn,          SHCMD("emacsclient -e '(kill-emacs)'") }),

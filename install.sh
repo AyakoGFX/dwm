@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Set the directory to search. Change "." to the desired directory if needed.
-directory=".."
+directory="."
 
 # Find and delete files with .o, .rej, or .orig extensions
 find "$directory" -type f \( -name "*.o" -o -name "*.rej" -o -name "*.orig" \) -exec rm -f {} +

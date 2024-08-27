@@ -20,13 +20,15 @@ t "+Term-app"
 o "+Open"
 {
     b "Browser" %{{google-chrome-stable}}
-    f "Filemanager" %{{pcmanfm}}
+    f "Filemanager" %{{thunar}}
+    
     g "Gimp" %{{gimp}}
     o "OBS" %{{obs}}
     c "Cursor" %{{cursor}}
     d "Github-Desktop" %{{github-desktop}}
     k "kdenlive" %{{org.kde.kdenlive}}
-
+    t "xfce-taskmanager" %{{xfce4-taskmanager}}
+    T "Timeshift" %{{timeshift-launcher}}
 }
 
 r "+Rofi"
@@ -44,5 +46,5 @@ s "+Screenshot"
     s "flameshot gui" %{{flameshot gui}}
     f "full-S" %{{flameshot full --path ~/Pictures/SS/}}
     d "delay 5s" %{{flameshot full --delay 5000}}
-    c "full-S-clipboard" %{{}}
+    c "full-S-clipboard" %{{flameshot full --clipboard}}
 }

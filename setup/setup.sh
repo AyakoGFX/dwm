@@ -47,7 +47,9 @@ install_packages \
     trash-cli \
     sxiv \
     rofi-emoji \
-    network-manager-applet 
+    network-manager-applet \
+    aspell \
+    aspell-en
     # pasystray  use yay -S volapplet-git
 
 
