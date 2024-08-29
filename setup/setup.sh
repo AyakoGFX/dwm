@@ -23,6 +23,7 @@ install_packages \
     extra/imlib2 \
     extra/xcb-util\
     extra/xorg-xauth \
+    xorg-xinput \
     extra/libxcb
 
 
