@@ -50,6 +50,8 @@ install_packages \
     rofi-emoji \
     network-manager-applet \
     aspell \
+    xclip \
+    xdotool \
     aspell-en
     # pasystray  use yay -S volapplet-git
 
