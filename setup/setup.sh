@@ -51,6 +51,7 @@ install_packages \
     network-manager-applet \
     aspell \
     xclip \
+    gvfs \
     xdotool \
     aspell-en
     # pasystray  use yay -S volapplet-git
