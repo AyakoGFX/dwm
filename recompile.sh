@@ -13,3 +13,5 @@ fi
 
 # Run sudo make clean install
 sudo make clean install
+
+find "$directory" -type f \( -name "*.o" -o -name "*.rej" -o -name "*.orig" \) -exec rm -f {} +
