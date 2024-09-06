@@ -141,6 +141,7 @@ clear
 
 # Set up dwm sessions
 echo "Setting up dwm sessions..."
+mkdir -p /usr/share/xsessions/
 sudo cp dwm.desktop /usr/share/xsessions/
 clear
 

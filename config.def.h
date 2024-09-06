@@ -4,6 +4,11 @@
 #include "layouts.c"
 #include "movestack.c"
 
+#define Button6 6
+#define Button7 7
+#define Button8 8
+#define Button9 9
+
 /* Appearance */
 static const unsigned int borderpx        = 2;        /* Border pixel of windows */
 static const unsigned int gappx           = 6;        /* Gaps between windows */
