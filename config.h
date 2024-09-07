@@ -4,6 +4,11 @@
 #include "layouts.c"
 #include "movestack.c"
 
+#define Button6 6
+#define Button7 7
+#define Button8 8
+#define Button9 9
+
 /* Appearance */
 static const unsigned int borderpx        = 2;        /* Border pixel of windows */
 static const unsigned int gappx           = 6;        /* Gaps between windows */
@@ -53,7 +58,8 @@ static const Rule rules[] = {
      *  WM_NAME(STRING) = title
      */
     /* class      instance  title           tags mask  isfloating  isterminal  noswallow  monitor */
-    { "Gimp",     NULL,     NULL,           0,         1,          0,           0,        -1 },
+    // { "obs",      NULL,     NULL,           1 << 8,    0,          0,           0,        -1 },
+    { "Gimp",     NULL,     NULL,           0,         0,          0,           0,        -1 },
     { "Firefox",  NULL,     NULL,           1 << 8,    0,          0,          -1,        -1 },
     { "St",       NULL,     NULL,           0,         0,          1,           0,        -1 },
     { "Alacritty",NULL,     NULL,           0,         0,          1,           0,        -1 },
@@ -65,6 +71,16 @@ static const Rule rules[] = {
     { NULL,       "spfm",      NULL,        SPTAG(1),  1,          0,           0,        -1 },
     { NULL,       "keepassxc", NULL,        SPTAG(2),  0,          0,           0,        -1 },
 };
+// tagmask for 
+// 1 << 0 = tag 1
+// 1 << 1 = tag 2
+// 1 << 2 = tag 3
+// 1 << 3 = tag 4
+// 1 << 4 = tag 5
+// 1 << 5 = tag 6
+// 1 << 6 = tag 7
+// 1 << 7 = tag 8
+// 1 << 8 = tag 9
 
 /* Audio controls */
 #include <X11/XF86keysym.h>
@@ -116,6 +132,8 @@ static Keychord *keychords[] = {
     &((Keychord){1, {{MODKEY, XK_w}},                spawn,          {.v = brightness_up } }),
     &((Keychord){1, {{MODKEY, XK_s}},                spawn,          {.v = brightness_down } }),
 
+
+
     /*wk*/
     &((Keychord){1, {{MODKEY, XK_o}},                spawn,          SHCMD("wk") }),
     
@@ -152,7 +170,8 @@ static Keychord *keychords[] = {
 
     /* Tag management */
     &((Keychord){1, {{MODKEY, XK_0}},                view,           {.ui = ~0 } }),
-    &((Keychord){1, {{MODKEY|ShiftMask, XK_0}},      tag,            {.ui = ~0 } }),
+ //   &((Keychord){1, {{MODKEY|ShiftMask, XK_0}},      tag,            {.ui = ~0 } }), removed because when a sticky window swiching tags stick window move to senter 
+    &((Keychord){1, {{MODKEY|ShiftMask, XK_0}},      togglesticky,   {0} }),
     &((Keychord){1, {{MODKEY|ControlMask, XK_comma}},  focusmon,       {.i = -1 } }),
     &((Keychord){1, {{MODKEY|ControlMask, XK_period}}, focusmon,       {.i = +1 } }),
     &((Keychord){1, {{MODKEY|ShiftMask, XK_comma}},  tagmon,         {.i = -1 } }),
