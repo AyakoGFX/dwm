@@ -132,8 +132,6 @@ static Keychord *keychords[] = {
     &((Keychord){1, {{MODKEY, XK_w}},                spawn,          {.v = brightness_up } }),
     &((Keychord){1, {{MODKEY, XK_s}},                spawn,          {.v = brightness_down } }),
 
-
-
     /*wk*/
     &((Keychord){1, {{MODKEY, XK_o}},                spawn,          SHCMD("wk") }),
     
@@ -170,7 +168,7 @@ static Keychord *keychords[] = {
 
     /* Tag management */
     &((Keychord){1, {{MODKEY, XK_0}},                view,           {.ui = ~0 } }),
- //   &((Keychord){1, {{MODKEY|ShiftMask, XK_0}},      tag,            {.ui = ~0 } }), removed because when a sticky window swiching tags stick window move to senter 
+ //   &((Keychord){1, {{MODKEY|ShiftMask, XK_0}},      tag,            {.ui = ~0 } }), removed due to the issue where switching tags with a sticky window causes the sticky window to move to the center 
     &((Keychord){1, {{MODKEY|ShiftMask, XK_0}},      togglesticky,   {0} }),
     &((Keychord){1, {{MODKEY|ControlMask, XK_comma}},  focusmon,       {.i = -1 } }),
     &((Keychord){1, {{MODKEY|ControlMask, XK_period}}, focusmon,       {.i = +1 } }),
