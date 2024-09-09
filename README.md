@@ -1,2 +1,0 @@
-# dwm
- dwm window manager

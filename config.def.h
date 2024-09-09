@@ -135,7 +135,8 @@ static Keychord *keychords[] = {
 
 
     /*wk*/
-    &((Keychord){1, {{MODKEY, XK_o}},                spawn,          SHCMD("wk") }),
+    &((Keychord){1, {{MODKEY, 0}},                spawn,          SHCMD("wk") }),
+    // &((Keychord){1, {{MODKEY, XK_o}},                spawn,          SHCMD("wk") }),
     
     /* Audio control */
     &((Keychord){1, {{MODKEY|ShiftMask, XK_w}},      spawn,          {.v = upvol   } }),

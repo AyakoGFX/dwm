@@ -22,3 +22,6 @@ static const Block blocks[] = {
 static char delim[] = " | ";
 static unsigned int delimLen = 5;
 // top -bn1 | awk '/^%Cpu/ { print $2 " " $3 " " $4 " " $5 }' | awk '{sum=0; for(i=1; i<=NF; i++) sum+=$i; print sum"%"}'
+//
+//cat /sys/class/power_supply/BAT1/capacity
+//https://github.com/alexb7711/dwmblocks/tree/master/scripts

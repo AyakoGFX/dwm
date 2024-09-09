@@ -28,7 +28,7 @@ KeyChord builtinKeyChords[] = {
             .repr = "x", .len = 1
         },
         .description = "Kill", 
-        .command = "killall volapplet && killall cbatticon", 
+        .command = "killall dwmblocks && killall volapplet && killall cbatticon", 
         .before = NULL, 
         .after = NULL, 
         .flags = {

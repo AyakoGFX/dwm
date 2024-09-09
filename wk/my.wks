@@ -1,4 +1,4 @@
-x "Kill" %{{killall volapplet && killall cbatticon}}
+x "Kill" %{{killall dwmblocks && killall volapplet && killall cbatticon}}
 l "LockScrean" %{{slock}}
 
 e "+Emacs"
