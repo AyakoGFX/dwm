@@ -76,7 +76,7 @@ install_packages \
 # yay -S volapplet-git
 
 # sudo apt install nala 
-# sudo nala update && sudo nala upgrade -y
+# sudo nala update && sudo nala upgrade
 #
 # sudo nala install \
 #     fonts-terminus \
