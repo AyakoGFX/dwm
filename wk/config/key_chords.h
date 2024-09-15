@@ -502,6 +502,24 @@ KeyChord builtinKeyChords[] = {
                         .ctrl = false, .alt = false, .hyper = false, .shift = false
                     },
                     .special = SPECIAL_KEY_NONE,
+                    .repr = "s", .len = 1
+                },
+                .description = "rofi-spellcheck", 
+                .command = "rofi-spell-c", 
+                .before = NULL, 
+                .after = NULL, 
+                .flags = {
+                    false, false, false, false, false, false, false,
+                    false, false, false, false, false, false, false
+                }, .keyChords = NULL
+            },
+            {
+                .state = KEY_CHORD_STATE_NOT_NULL, 
+                .key = {
+                    .mods = {
+                        .ctrl = false, .alt = false, .hyper = false, .shift = false
+                    },
+                    .special = SPECIAL_KEY_NONE,
                     .repr = "P", .len = 1
                 },
                 .description = "POWER-MENU", 

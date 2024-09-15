@@ -1,0 +1,20 @@
+#!/bin/sh
+# yay -S didyoumean-bin
+
+# dmwnu
+# # Prompt the user to enter a word
+# WORD=$(echo "/n" | dmenu -p "Enter Word")
+#
+# # Check the spelling of the word and prompt the user to select the correct spelling
+# # Copy the selected word to the clipboard
+# dym -c "$WORD" | dmenu -p "Select Correct Spelling" | xclip -selection clipboard
+
+
+#!/bin/sh
+
+# Prompt the user to enter a word using rofi
+WORD=$(echo "" | rofi -dmenu -p "Enter Word")
+
+# Check the spelling of the word and prompt the user to select the correct spelling
+# Copy the selected word to the clipboard
+dym -c "$WORD" | rofi -dmenu -p "Select Correct Spelling" | xclip -selection clipboard

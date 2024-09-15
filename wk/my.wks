@@ -38,6 +38,7 @@ r "+Rofi"
     w "rofi-wifi" %{{rofi-wifi}}
     b "rofi-bluetooth" %{{rofi-bluetooth}}
     p "rofi-passmenu" %{{rofi-passmenu}}
+    s "rofi-spellcheck" %{{rofi-spell-c}}
     P "POWER-MENU" %{{rofi -show power-menu -modi power-menu:rofi-power-menu}}
 }
 
