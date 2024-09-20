@@ -7,7 +7,6 @@ static const char col_gray4[]       = "#16161e";
 static const char col_gray5[]       = "#ca6278";
 static const char col_cyan[]        = "#68aad2";
 
-
 // Dracula
 // static const char col_gray1[]       = "#282a36";
 // static const char col_gray2[]       = "#444444";
@@ -37,4 +36,4 @@ static const char col_cyan[]        = "#68aad2";
 // static const char col_gray3[]       = "#bbbbbb";
 // static const char col_gray4[]       = "#eeeeee";
 // static const char col_cyan[]        = "#222222";
-// static const char col_AW[]        = "#eeeeee";
+// static const char col_AW[]          = "#eeeeee";
