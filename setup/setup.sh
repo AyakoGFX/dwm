@@ -53,6 +53,7 @@ install_packages \
     xclip \
     gvfs \
     xdotool \
+    xorg-xwininfo \
     aspell-en
     # pasystray  use yay -S volapplet-git
 

@@ -144,6 +144,24 @@ KeyChord builtinKeyChords[] = {
                     false, false, false, false, false, false, false
                 }, .keyChords = NULL
             },
+            {
+                .state = KEY_CHORD_STATE_NOT_NULL, 
+                .key = {
+                    .mods = {
+                        .ctrl = false, .alt = false, .hyper = false, .shift = false
+                    },
+                    .special = SPECIAL_KEY_NONE,
+                    .repr = "k", .len = 1
+                },
+                .description = "Emacs Everyware", 
+                .command = "emacsclient --eval \"(emacs-everywhere)\"", 
+                .before = NULL, 
+                .after = NULL, 
+                .flags = {
+                    false, false, false, false, false, false, false,
+                    false, false, false, false, false, false, false
+                }, .keyChords = NULL
+            },
             { .state = KEY_CHORD_STATE_IS_NULL }
         }
     },
@@ -383,6 +401,84 @@ KeyChord builtinKeyChords[] = {
                     false, false, false, false, false, false, false,
                     false, false, false, false, false, false, false
                 }, .keyChords = NULL
+            },
+            { .state = KEY_CHORD_STATE_IS_NULL }
+        }
+    },
+    {
+        .state = KEY_CHORD_STATE_NOT_NULL, 
+        .key = {
+            .mods = {
+                .ctrl = false, .alt = false, .hyper = false, .shift = false
+            },
+            .special = SPECIAL_KEY_NONE,
+            .repr = "S", .len = 1
+        },
+        .description = "+Services", 
+        .command = NULL, 
+        .before = NULL, 
+        .after = NULL, 
+        .flags = {
+            false, false, false, false, false, false, false,
+            false, false, false, false, false, false, false
+        }, 
+        .keyChords = (KeyChord[]){
+            {
+                .state = KEY_CHORD_STATE_NOT_NULL, 
+                .key = {
+                    .mods = {
+                        .ctrl = false, .alt = false, .hyper = false, .shift = false
+                    },
+                    .special = SPECIAL_KEY_NONE,
+                    .repr = "o", .len = 1
+                },
+                .description = "+olamma", 
+                .command = NULL, 
+                .before = NULL, 
+                .after = NULL, 
+                .flags = {
+                    false, false, false, false, false, false, false,
+                    false, false, false, false, false, false, false
+                }, 
+                .keyChords = (KeyChord[]){
+                    {
+                        .state = KEY_CHORD_STATE_NOT_NULL, 
+                        .key = {
+                            .mods = {
+                                .ctrl = false, .alt = false, .hyper = false, .shift = false
+                            },
+                            .special = SPECIAL_KEY_NONE,
+                            .repr = "s", .len = 1
+                        },
+                        .description = "stop", 
+                        .command = "systemctl stop ollama.service", 
+                        .before = NULL, 
+                        .after = NULL, 
+                        .flags = {
+                            false, false, false, false, false, false, false,
+                            false, false, false, false, false, false, false
+                        }, .keyChords = NULL
+                    },
+                    {
+                        .state = KEY_CHORD_STATE_NOT_NULL, 
+                        .key = {
+                            .mods = {
+                                .ctrl = false, .alt = false, .hyper = false, .shift = false
+                            },
+                            .special = SPECIAL_KEY_NONE,
+                            .repr = "S", .len = 1
+                        },
+                        .description = "start", 
+                        .command = "systemctl start ollama.service", 
+                        .before = NULL, 
+                        .after = NULL, 
+                        .flags = {
+                            false, false, false, false, false, false, false,
+                            false, false, false, false, false, false, false
+                        }, .keyChords = NULL
+                    },
+                    { .state = KEY_CHORD_STATE_IS_NULL }
+                }
             },
             { .state = KEY_CHORD_STATE_IS_NULL }
         }

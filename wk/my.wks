@@ -7,6 +7,7 @@ e "+Emacs"
     E "open Emacs" %{{emacs}}
     s "start server" %{{emacs --daemon}}
     S "stop server" %{{emacsclient -e '(kill-emacs)'}}
+    k "Emacs Everyware" %{{emacsclient --eval "(emacs-everywhere)"}}
 
 
 }
@@ -31,6 +32,14 @@ o "+Open"
     T "Timeshift" %{{timeshift-launcher}}
 }
 
+S "+Services"
+{
+    o "+olamma"
+    {
+      s "stop"  %{{systemctl stop ollama.service}}
+      S "start"  %{{systemctl start ollama.service}}
+    }
+}
 r "+Rofi"
 {
     e "Emoji" %{{rofi -modi emoji -show emoji}}
