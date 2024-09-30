@@ -480,6 +480,45 @@ KeyChord builtinKeyChords[] = {
                     { .state = KEY_CHORD_STATE_IS_NULL }
                 }
             },
+            {
+                .state = KEY_CHORD_STATE_NOT_NULL, 
+                .key = {
+                    .mods = {
+                        .ctrl = false, .alt = false, .hyper = false, .shift = false
+                    },
+                    .special = SPECIAL_KEY_NONE,
+                    .repr = "v", .len = 1
+                },
+                .description = "vert-manager", 
+                .command = NULL, 
+                .before = NULL, 
+                .after = NULL, 
+                .flags = {
+                    false, false, false, false, false, false, false,
+                    false, false, false, false, false, false, false
+                }, 
+                .keyChords = (KeyChord[]){
+                    {
+                        .state = KEY_CHORD_STATE_NOT_NULL, 
+                        .key = {
+                            .mods = {
+                                .ctrl = false, .alt = false, .hyper = false, .shift = false
+                            },
+                            .special = SPECIAL_KEY_NONE,
+                            .repr = "S", .len = 1
+                        },
+                        .description = "start", 
+                        .command = "alacritty -e bash -c \"sudo /usr/bin/virsh net-start default\"", 
+                        .before = NULL, 
+                        .after = NULL, 
+                        .flags = {
+                            false, false, false, false, false, false, false,
+                            false, false, false, false, false, false, false
+                        }, .keyChords = NULL
+                    },
+                    { .state = KEY_CHORD_STATE_IS_NULL }
+                }
+            },
             { .state = KEY_CHORD_STATE_IS_NULL }
         }
     },

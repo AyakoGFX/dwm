@@ -39,6 +39,10 @@ S "+Services"
       s "stop"  %{{systemctl stop ollama.service}}
       S "start"  %{{systemctl start ollama.service}}
     }
+    v "vert-manager"
+    {
+      S "start"  %{{alacritty -e bash -c "sudo /usr/bin/virsh net-start default"}}
+    }
 }
 r "+Rofi"
 {

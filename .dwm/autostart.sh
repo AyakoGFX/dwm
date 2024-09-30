@@ -17,7 +17,8 @@ clipmenud &
 xset r rate 250 60 &
 
 # set screan to  1920x1080 --rate 144.00
-# xrandr --output eDP --mode 1920x1080 --rate 144.00 &
+xrandr --output eDP --mode 1920x1080 --rate 144.00 &
+# xrandr --output eDP --mode 1920x1080 --rate 60.02 &
 
 dwmblocks &
 
