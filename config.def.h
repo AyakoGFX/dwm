@@ -4,10 +4,14 @@
 #include "layouts.c"
 #include "movestack.c"
 
-#define Button6 6
-#define Button7 7
-#define Button8 8
-#define Button9 9
+/* #define Button6 6 */
+/* #define Button7 7 */
+/* #define Button8 8 */
+/* #define Button9 9 */
+
+#define Button4	4
+#define Button5	5
+
 
 /* Appearance */
 static const unsigned int borderpx        = 2;        /* Border pixel of windows */
@@ -131,6 +135,9 @@ static Keychord *keychords[] = {
     /* Brightness control */
     &((Keychord){1, {{MODKEY, XK_w}},                spawn,          {.v = brightness_up } }),
     &((Keychord){1, {{MODKEY, XK_s}},                spawn,          {.v = brightness_down } }),
+
+    /*zoom screan */
+    &((Keychord){1, {{MODKEY, XK_e}},                spawn,          SHCMD("zoom") }),
 
     /*wk*/
     &((Keychord){1, {{MODKEY, XK_o}},                spawn,          SHCMD("wk") }),
