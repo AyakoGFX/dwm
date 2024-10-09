@@ -61,6 +61,24 @@ KeyChord builtinKeyChords[] = {
                 .ctrl = false, .alt = false, .hyper = false, .shift = false
             },
             .special = SPECIAL_KEY_NONE,
+            .repr = "E", .len = 1
+        },
+        .description = "Emoji-picker", 
+        .command = "flatpak run com.tomjwatson.Emote", 
+        .before = NULL, 
+        .after = NULL, 
+        .flags = {
+            false, false, false, false, false, false, false,
+            false, false, false, false, false, false, false
+        }, .keyChords = NULL
+    },
+    {
+        .state = KEY_CHORD_STATE_NOT_NULL, 
+        .key = {
+            .mods = {
+                .ctrl = false, .alt = false, .hyper = false, .shift = false
+            },
+            .special = SPECIAL_KEY_NONE,
             .repr = "e", .len = 1
         },
         .description = "+Emacs", 

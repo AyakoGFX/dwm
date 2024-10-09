@@ -1,5 +1,6 @@
 x "Kill" %{{killall dwmblocks && killall volapplet && killall cbatticon}}
 l "LockScrean" %{{slock}}
+E "Emoji-picker"%{{flatpak run com.tomjwatson.Emote}}
 
 e "+Emacs"
 {
@@ -8,9 +9,9 @@ e "+Emacs"
     s "start server" %{{emacs --daemon}}
     S "stop server" %{{emacsclient -e '(kill-emacs)'}}
     k "Emacs Everyware" %{{emacsclient --eval "(emacs-everywhere)"}}
-
-
 }
+
+
 
 t "+Term-app"
 {
