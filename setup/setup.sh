@@ -54,6 +54,7 @@ install_packages \
     gvfs \
     xdotool \
     xorg-xwininfo \
+    gvfs-mtp \
     aspell-en
     # pasystray  use yay -S volapplet-git
 
