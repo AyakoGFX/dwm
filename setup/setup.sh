@@ -31,6 +31,7 @@
 # echo "Installing desktop environment and utility applications..."
 # install_packages \
 #     picom \
+#     sxhkd \
 #     dmenu \
 #     flameshot \
 #     rofi \
@@ -50,6 +51,7 @@
 #     rofi-emoji \
 #     network-manager-applet \
 #     aspell \
+#     copyq \
 #     xclip \
 #     gvfs \
 #     xdotool \
@@ -98,10 +100,12 @@ sudo nala install \
     x11-xserver-utils \
     unzip \
     wget \
+    copyq \
     pipewire \
     wireplumber \
     pavucontrol \
     zoxide \
+    sxhkd \
     xdg-utils -y
 
 cd ..
@@ -127,16 +131,21 @@ sudo make clean install
 cd ..
 clear
 
-# Set up clipmenu
-echo "Setting up clipmenu..."
-cd clipmenu/
-sudo make
-sudo make clean install 
-cd init/
-mv clipmenud.service.in clipmenud.service
-sudo cp clipmenud.service /etc/systemd/system/
+cd keybind-demon
+./stow.sh
 cd ..
 clear
+
+# Set up clipmenu
+# echo "Setting up clipmenu..."
+# cd clipmenu/
+# sudo make
+# sudo make clean install 
+# cd init/
+# mv clipmenud.service.in clipmenud.service
+# sudo cp clipmenud.service /etc/systemd/system/
+# cd ..
+# clear
 
 # Set up dwm sessions
 echo "Setting up dwm sessions..."
