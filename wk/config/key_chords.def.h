@@ -79,6 +79,24 @@ KeyChord builtinKeyChords[] = {
                 .ctrl = false, .alt = false, .hyper = false, .shift = false
             },
             .special = SPECIAL_KEY_NONE,
+            .repr = "0", .len = 1
+        },
+        .description = "rofi", 
+        .command = "fish -c \"rofi -show drun\"", 
+        .before = NULL, 
+        .after = NULL, 
+        .flags = {
+            false, false, false, false, false, false, false,
+            false, false, false, false, false, false, false
+        }, .keyChords = NULL
+    },
+    {
+        .state = KEY_CHORD_STATE_NOT_NULL, 
+        .key = {
+            .mods = {
+                .ctrl = false, .alt = false, .hyper = false, .shift = false
+            },
+            .special = SPECIAL_KEY_NONE,
             .repr = "e", .len = 1
         },
         .description = "+Emacs", 

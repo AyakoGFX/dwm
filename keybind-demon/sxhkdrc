@@ -1,0 +1,4 @@
+super + d
+      rofi -show drun
+super + g
+      dmenu_run

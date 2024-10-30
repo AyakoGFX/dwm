@@ -137,7 +137,6 @@ static Keychord *keychords[] = {
     &((Keychord){1, {{MODKEY, XK_s}},                spawn,          {.v = brightness_down } }),
 
     /*zoom screan */
-    &((Keychord){1, {{MODKEY, Button4}},             spawn,          SHCMD("zoom") }),
     &((Keychord){1, {{MODKEY, XK_e}},                spawn,          SHCMD("zoom") }),
 
     /*wk*/
@@ -149,8 +148,8 @@ static Keychord *keychords[] = {
     &((Keychord){1, {{MODKEY, XK_F1}},               spawn,          {.v = mutevol } }),
 
     /* Application launchers */
-    &((Keychord){1, {{MODKEY, XK_d}},                spawn,          {.v = dmenucmd } }),
-    &((Keychord){1, {{MODKEY, XK_g}},                spawn,          {.v = DmenuRun } }),
+    /* &((Keychord){1, {{MODKEY, XK_d}},                spawn,          {.v = dmenucmd } }), */
+    /* &((Keychord){1, {{MODKEY, XK_g}},                spawn,          {.v = DmenuRun } }), */
     &((Keychord){1, {{MODKEY, XK_Return}},           spawn,          {.v = termcmd } }),
 
     /* Window management */

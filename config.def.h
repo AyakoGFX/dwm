@@ -148,8 +148,8 @@ static Keychord *keychords[] = {
     &((Keychord){1, {{MODKEY, XK_F1}},               spawn,          {.v = mutevol } }),
 
     /* Application launchers */
-    &((Keychord){1, {{MODKEY, XK_d}},                spawn,          {.v = dmenucmd } }),
-    &((Keychord){1, {{MODKEY, XK_g}},                spawn,          {.v = DmenuRun } }),
+    /* &((Keychord){1, {{MODKEY, XK_d}},                spawn,          {.v = dmenucmd } }), */
+    /* &((Keychord){1, {{MODKEY, XK_g}},                spawn,          {.v = DmenuRun } }), */
     &((Keychord){1, {{MODKEY, XK_Return}},           spawn,          {.v = termcmd } }),
 
     /* Window management */

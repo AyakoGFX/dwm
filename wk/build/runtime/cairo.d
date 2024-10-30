@@ -6,10 +6,9 @@ build/runtime/cairo.o: src/runtime/cairo.c /usr/include/cairo/cairo.h \
  /usr/include/glib-2.0/glib-object.h \
  /usr/include/glib-2.0/gobject/gbinding.h /usr/include/glib-2.0/glib.h \
  /usr/include/glib-2.0/glib/galloca.h /usr/include/glib-2.0/glib/gtypes.h \
- /usr/lib/glib-2.0/include/glibconfig.h \
+ /usr/lib/x86_64-linux-gnu/glib-2.0/include/glibconfig.h \
  /usr/include/glib-2.0/glib/gmacros.h \
  /usr/include/glib-2.0/glib/gversionmacros.h \
- /usr/include/glib-2.0/glib/glib-visibility.h \
  /usr/include/glib-2.0/glib/garray.h \
  /usr/include/glib-2.0/glib/gasyncqueue.h \
  /usr/include/glib-2.0/glib/gthread.h \
@@ -40,7 +39,6 @@ build/runtime/cairo.o: src/runtime/cairo.c /usr/include/cairo/cairo.h \
  /usr/include/glib-2.0/glib/gmain.h /usr/include/glib-2.0/glib/gpoll.h \
  /usr/include/glib-2.0/glib/gslist.h /usr/include/glib-2.0/glib/gstring.h \
  /usr/include/glib-2.0/glib/gunicode.h \
- /usr/include/glib-2.0/glib/gstrfuncs.h \
  /usr/include/glib-2.0/glib/gkeyfile.h \
  /usr/include/glib-2.0/glib/gmappedfile.h \
  /usr/include/glib-2.0/glib/gmarkup.h \
@@ -48,7 +46,6 @@ build/runtime/cairo.o: src/runtime/cairo.c /usr/include/cairo/cairo.h \
  /usr/include/glib-2.0/glib/gvariant.h \
  /usr/include/glib-2.0/glib/gvarianttype.h \
  /usr/include/glib-2.0/glib/goption.h \
- /usr/include/glib-2.0/glib/gpathbuf.h \
  /usr/include/glib-2.0/glib/gpattern.h \
  /usr/include/glib-2.0/glib/gprimes.h /usr/include/glib-2.0/glib/gqsort.h \
  /usr/include/glib-2.0/glib/gqueue.h /usr/include/glib-2.0/glib/grand.h \
@@ -61,6 +58,7 @@ build/runtime/cairo.o: src/runtime/cairo.c /usr/include/cairo/cairo.h \
  /usr/include/glib-2.0/glib/gsequence.h \
  /usr/include/glib-2.0/glib/gshell.h /usr/include/glib-2.0/glib/gslice.h \
  /usr/include/glib-2.0/glib/gspawn.h \
+ /usr/include/glib-2.0/glib/gstrfuncs.h \
  /usr/include/glib-2.0/glib/gstringchunk.h \
  /usr/include/glib-2.0/glib/gstrvbuilder.h \
  /usr/include/glib-2.0/glib/gtestutils.h \
@@ -78,7 +76,6 @@ build/runtime/cairo.o: src/runtime/cairo.c /usr/include/cairo/cairo.h \
  /usr/include/glib-2.0/glib/glib-autocleanups.h \
  /usr/include/glib-2.0/gobject/gobject.h \
  /usr/include/glib-2.0/gobject/gtype.h \
- /usr/include/glib-2.0/gobject/gobject-visibility.h \
  /usr/include/glib-2.0/gobject/gvalue.h \
  /usr/include/glib-2.0/gobject/gparam.h \
  /usr/include/glib-2.0/gobject/gclosure.h \
@@ -102,11 +99,11 @@ build/runtime/cairo.o: src/runtime/cairo.c /usr/include/cairo/cairo.h \
  /usr/include/harfbuzz/hb-blob.h /usr/include/harfbuzz/hb-common.h \
  /usr/include/harfbuzz/hb-buffer.h /usr/include/harfbuzz/hb-unicode.h \
  /usr/include/harfbuzz/hb-font.h /usr/include/harfbuzz/hb-face.h \
- /usr/include/harfbuzz/hb-map.h /usr/include/harfbuzz/hb-set.h \
- /usr/include/harfbuzz/hb-draw.h /usr/include/harfbuzz/hb.h \
- /usr/include/harfbuzz/hb-paint.h /usr/include/harfbuzz/hb-deprecated.h \
- /usr/include/harfbuzz/hb-shape.h /usr/include/harfbuzz/hb-shape-plan.h \
- /usr/include/harfbuzz/hb-style.h /usr/include/harfbuzz/hb-version.h \
+ /usr/include/harfbuzz/hb-set.h /usr/include/harfbuzz/hb-draw.h \
+ /usr/include/harfbuzz/hb.h /usr/include/harfbuzz/hb-deprecated.h \
+ /usr/include/harfbuzz/hb-map.h /usr/include/harfbuzz/hb-shape.h \
+ /usr/include/harfbuzz/hb-shape-plan.h /usr/include/harfbuzz/hb-style.h \
+ /usr/include/harfbuzz/hb-version.h \
  /usr/include/pango-1.0/pango/pango-types.h \
  /usr/include/pango-1.0/pango/pango-gravity.h \
  /usr/include/pango-1.0/pango/pango-matrix.h \
@@ -147,10 +144,9 @@ build/runtime/cairo.o: src/runtime/cairo.c /usr/include/cairo/cairo.h \
 /usr/include/glib-2.0/glib.h:
 /usr/include/glib-2.0/glib/galloca.h:
 /usr/include/glib-2.0/glib/gtypes.h:
-/usr/lib/glib-2.0/include/glibconfig.h:
+/usr/lib/x86_64-linux-gnu/glib-2.0/include/glibconfig.h:
 /usr/include/glib-2.0/glib/gmacros.h:
 /usr/include/glib-2.0/glib/gversionmacros.h:
-/usr/include/glib-2.0/glib/glib-visibility.h:
 /usr/include/glib-2.0/glib/garray.h:
 /usr/include/glib-2.0/glib/gasyncqueue.h:
 /usr/include/glib-2.0/glib/gthread.h:
@@ -189,7 +185,6 @@ build/runtime/cairo.o: src/runtime/cairo.c /usr/include/cairo/cairo.h \
 /usr/include/glib-2.0/glib/gslist.h:
 /usr/include/glib-2.0/glib/gstring.h:
 /usr/include/glib-2.0/glib/gunicode.h:
-/usr/include/glib-2.0/glib/gstrfuncs.h:
 /usr/include/glib-2.0/glib/gkeyfile.h:
 /usr/include/glib-2.0/glib/gmappedfile.h:
 /usr/include/glib-2.0/glib/gmarkup.h:
@@ -197,7 +192,6 @@ build/runtime/cairo.o: src/runtime/cairo.c /usr/include/cairo/cairo.h \
 /usr/include/glib-2.0/glib/gvariant.h:
 /usr/include/glib-2.0/glib/gvarianttype.h:
 /usr/include/glib-2.0/glib/goption.h:
-/usr/include/glib-2.0/glib/gpathbuf.h:
 /usr/include/glib-2.0/glib/gpattern.h:
 /usr/include/glib-2.0/glib/gprimes.h:
 /usr/include/glib-2.0/glib/gqsort.h:
@@ -214,6 +208,7 @@ build/runtime/cairo.o: src/runtime/cairo.c /usr/include/cairo/cairo.h \
 /usr/include/glib-2.0/glib/gshell.h:
 /usr/include/glib-2.0/glib/gslice.h:
 /usr/include/glib-2.0/glib/gspawn.h:
+/usr/include/glib-2.0/glib/gstrfuncs.h:
 /usr/include/glib-2.0/glib/gstringchunk.h:
 /usr/include/glib-2.0/glib/gstrvbuilder.h:
 /usr/include/glib-2.0/glib/gtestutils.h:
@@ -233,7 +228,6 @@ build/runtime/cairo.o: src/runtime/cairo.c /usr/include/cairo/cairo.h \
 /usr/include/glib-2.0/glib/glib-autocleanups.h:
 /usr/include/glib-2.0/gobject/gobject.h:
 /usr/include/glib-2.0/gobject/gtype.h:
-/usr/include/glib-2.0/gobject/gobject-visibility.h:
 /usr/include/glib-2.0/gobject/gvalue.h:
 /usr/include/glib-2.0/gobject/gparam.h:
 /usr/include/glib-2.0/gobject/gclosure.h:
@@ -261,12 +255,11 @@ build/runtime/cairo.o: src/runtime/cairo.c /usr/include/cairo/cairo.h \
 /usr/include/harfbuzz/hb-unicode.h:
 /usr/include/harfbuzz/hb-font.h:
 /usr/include/harfbuzz/hb-face.h:
-/usr/include/harfbuzz/hb-map.h:
 /usr/include/harfbuzz/hb-set.h:
 /usr/include/harfbuzz/hb-draw.h:
 /usr/include/harfbuzz/hb.h:
-/usr/include/harfbuzz/hb-paint.h:
 /usr/include/harfbuzz/hb-deprecated.h:
+/usr/include/harfbuzz/hb-map.h:
 /usr/include/harfbuzz/hb-shape.h:
 /usr/include/harfbuzz/hb-shape-plan.h:
 /usr/include/harfbuzz/hb-style.h:
