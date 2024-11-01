@@ -105,6 +105,7 @@ sudo nala install \
     wireplumber \
     pavucontrol \
     zoxide \
+    eog \ # image viver
     sxhkd \
     xdg-utils -y
 
