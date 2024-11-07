@@ -11,6 +11,8 @@ static const Block blocks[] = {
     {" ",    "top -bn1 | awk '/^%Cpu/ { print int($2) \" \" int($3) \" \" int($4) \" \" int($5) }' | awk '{sum=0; for(i=1; i<=NF; i++) sum+=$i; print sum\"%\"}'",                 3,                  0},  // CPU 
     {" ",    "df -h / | awk 'NR==2 {print $3}'",                                    60,                 0},  // Disk usage (Used and Available space on /)
     {"󱊣 ",      "cat /sys/class/power_supply/BAT1/capacity",                               60,                  0},  //batery
+    {" ",      "~/./tmp/sb-battery",                               1,                  0},  //batery
+
 
 {"󰕾 ",    "pactl list sinks | awk '/Volume:/ {print $5}' | head -n 1 | tr -d '%'",   1,                  0},  // Volume level
 
