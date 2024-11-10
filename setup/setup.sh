@@ -1,5 +1,5 @@
 # #!/bin/bash
-
+xdg-user-dirs-update
 # Function to install packages with error handling
 # install_packages() {
 #     for package in "$@"; do
@@ -25,7 +25,6 @@
 #     extra/xorg-xauth \
 #     xorg-xinput \
 #     extra/libxcb
-
 
 # # Install desktop environment and utility applications
 # echo "Installing desktop environment and utility applications..."
@@ -60,7 +59,6 @@
 #     aspell-en
 #     # pasystray  use yay -S volapplet-git
 
-
 # # Install fonts
 # echo "Installing fonts..."
 # install_packages \
@@ -76,38 +74,38 @@
 # yay -S ttf-defenestration
 # yay -S ttf-ms-win11-auto
 
-# applet 
+# applet
 # yay -S volapplet-git
 
-sudo apt install nala 
+sudo apt install nala
 sudo nala update && sudo nala upgrade
 
 sudo nala install \
-    fonts-terminus \
-    build-essential \
-    stow \
-    libx11-dev \
-    libx11-xcb-dev \
-    libxcb-res0-dev \
-    libxinerama-dev \
-    libxft-dev \
-    libimlib2-dev \
-    policykit-1-gnome \
-    rofi \
-    picom \
-    thunar \
-    nitrogen \
-    x11-xserver-utils \
-    unzip \
-    wget \
-    copyq \
-    pipewire \
-    wireplumber \
-    pavucontrol \
-    zoxide \
-    eog \ # image viver
-    sxhkd \
-    xdg-utils -y
+  fonts-terminus \
+  build-essential \
+  stow \
+  libx11-dev \
+  libx11-xcb-dev \
+  libxcb-res0-dev \
+  libxinerama-dev \
+  libxft-dev \
+  libimlib2-dev \
+  policykit-1-gnome \
+  rofi \
+  picom \
+  thunar \
+  nitrogen \
+  x11-xserver-utils \
+  unzip \
+  wget \
+  copyq \
+  pipewire \
+  wireplumber \
+  pavucontrol \
+  zoxide \
+  eog \ # image viver
+sxhkd \
+  xdg-utils -y
 
 cd ..
 mkdir -p ~/Pictures/SS/
@@ -141,7 +139,7 @@ clear
 # echo "Setting up clipmenu..."
 # cd clipmenu/
 # sudo make
-# sudo make clean install 
+# sudo make clean install
 # cd init/
 # mv clipmenud.service.in clipmenud.service
 # sudo cp clipmenud.service /etc/systemd/system/
@@ -163,6 +161,5 @@ clear
 
 # Final installation step
 echo "Performing final installation..."
-sudo make clean install 
+sudo make clean install
 clear
-

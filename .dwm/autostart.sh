@@ -1,32 +1,37 @@
-#!/bin/bash
-
-sxhkd &
+#!/usr/bin/env bash
+function run {
+    if ! pgrep $1 > /dev/null ;
+    then
+        $@&
+    fi
+}
+run sxhkd &
 
 # Restore wallpaper using Nitrogen
-nitrogen --restore &
+run nitrogen --restore &
 
 # Start Picom for compositing
-picom &
+run picom &
 
 # yay -S picom-ftlabs-git
 # picom --animations -b &
 
-emacs --daemon &
+run emacs --daemon &
 
 #clipmenud &
 
 # Set keyboard repeat rate
-xset r rate 250 60 &
+run xset r rate 250 60 &
 
 # set screan to  1920x1080 --rate 144.00
 # xrandr --output eDP --mode 1920x1080 --rate 144.00 &
 # xrandr --output eDP --mode 1920x1080 --rate 60.02 &
 
-dwmblocks &
+# dwmblocks &
 
-nm-applet &
+run nm-applet &
 
-copyq &
+run copyq &
 
 #blueman-applet &
 
@@ -36,7 +41,7 @@ copyq &
 
 # /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
 /usr/lib/policykit-1-gnome/polkit-gnome-authentication-agent-1 &
-
+/usr/lib/x86_64-linux-gnu/xfce4/notifyd/xfce4-notifyd &
 setxkbmap -option caps:swapescape &
 
 # mouse speed
