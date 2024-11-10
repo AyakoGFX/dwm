@@ -70,7 +70,7 @@ static const struct arg args[] = {
     { datetime,               " %s |",                          "%d/%m/%y" },                  // Date
     { datetime,               " %s |",                          "%I:%M %p" },                  // Time (12-hour format with AM/PM)
     { uptime,                 " Up: %s |",                      NULL },                        // Uptime
-    { ram_perc,               "   %s%% |",                   NULL },                        // RAM usage
+    { ram_used,               "   %s |",                   NULL },                        // RAM usage
     { cpu_perc,               "   %s%% |",                   NULL },                        // CPU usage
     // { disk_used,              "   %s |",                   "/" },                         // Disk usage (Used space)
     { run_command, "   %s |", "df -h / | awk 'NR==2 {print $3}'" },
