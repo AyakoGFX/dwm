@@ -163,6 +163,8 @@ static Keychord *keychords[] = {
     &((Keychord){1, {{MODKEY, XK_q}},                killclient,     {0} }),
 
     /* Layout manipulation */
+    &((Keychord){1, {{MODKEY, XK_u}},   incnmaster,    {.i = +1 } }),
+    &((Keychord){1, {{MODKEY, XK_i}},   incnmaster,    {.i = -1 } }),
     &((Keychord){1, {{MODKEY, XK_comma}},   cyclelayout,    {.i = -1 } }),
     &((Keychord){1, {{MODKEY, XK_period}},  cyclelayout,    {.i = +1 } }),
     &((Keychord){1, {{MODKEY, XK_space}},            setlayout,      {0} }),
