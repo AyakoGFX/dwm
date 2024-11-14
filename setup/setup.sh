@@ -85,6 +85,7 @@ sudo nala install \
   build-essential \
   stow \
   libx11-dev \
+  network-manager-gnome\
   libx11-xcb-dev \
   libxcb-res0-dev \
   libxinerama-dev \
@@ -103,8 +104,8 @@ sudo nala install \
   wireplumber \
   pavucontrol \
   zoxide \
-  eog \ # image viver
-sxhkd \
+  eog \
+  sxhkd \
   xdg-utils -y
 
 cd ..

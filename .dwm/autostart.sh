@@ -21,7 +21,6 @@ setxkbmap -option caps:swapescape &
 /usr/lib/x86_64-linux-gnu/xfce4/notifyd/xfce4-notifyd &
 
 
-
 #clipmenud &
 #blueman-applet &
 #volapplet &
